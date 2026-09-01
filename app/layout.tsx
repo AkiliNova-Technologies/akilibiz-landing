@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     template: "%s · AkiliBiz",
   },
   description:
-    "AkiliBiz brings sales, inventory, customers, suppliers, VAT, reporting, and business insights into one connected system for growing businesses in Uganda and across Africa.",
+    "AkiliBiz unifies sales, inventory, customers, suppliers, VAT, and reports so growing African businesses make smarter decisions daily.",
 
   keywords: [
     "business management software Uganda",
@@ -77,10 +77,10 @@ export const metadata: Metadata = {
       "Sales, inventory, customers, suppliers, VAT, and reporting in one connected system for growing businesses.",
     images: [
       {
-        url: "/images/seo/akilibiz-og.png",
+        url: "/images/seo/akilibiz-og.jpg",
         width: 1200,
         height: 630,
-        alt: "AkiliBiz — Run your business with clarity",
+        alt: "AkiliBiz business management platform for growing African businesses",
       },
     ],
   },
@@ -89,8 +89,8 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "AkiliBiz — Run your business with clarity",
     description:
-      "Sales, inventory, customers, suppliers, VAT, and reporting in one connected system for growing businesses.",
-    images: ["/images/seo/akilibiz-og.png"],
+      "AkiliBiz unifies sales, inventory, customers, suppliers, VAT, and reports so growing African businesses make smarter decisions daily.",
+    images: ["/images/seo/akilibiz-og.jpg"],
   },
 
   icons: {
@@ -112,8 +112,7 @@ export default function RootLayout({
         inter.variable,
         manrope.variable,
         sora.variable,
-      )}
-    >
+      )}>
       <body className="flex min-h-full flex-col font-sans">
         <MarketingNavbar />
         <main className="flex-1">{children}</main>
