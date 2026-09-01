@@ -8,6 +8,6 @@ export default function robots(): MetadataRoute.Robots {
         allow: "/",
       },
     ],
-    sitemap: "https://akilibiz.com/sitemap.xml",
+    sitemap: "https://akilibiz.vercel.app/sitemap.xml",
   };
 }
