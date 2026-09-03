@@ -132,8 +132,8 @@ export default function FeaturesPage() {
           return (
             <section
               key={section.eyebrow}
-              className={`px-4 py-16 sm:px-6 sm:py-24 lg:px-8 ${
-                darkSection ? "bg-[#0b1722] text-white" : ""
+              className={`px-4 first:pt-16 pb-16 sm:px-6 sm:pb-24 lg:px-8 ${
+                darkSection ? "pt-16 bg-[#0b1722] text-white" : ""
               }`}
             >
               <MarketingWideContainer className="grid gap-10 lg:grid-cols-[0.76fr_1.24fr] lg:gap-20">
@@ -224,7 +224,6 @@ export default function FeaturesPage() {
       </div>
 
       <CTASection
-        eyebrow="See it in action"
         title="Ready to see AkiliBiz on your own operations?"
         description="Talk to us about how AkiliBiz fits your day-to-day sales, stock, and reporting needs."
         primaryLabel="Book a Demo"

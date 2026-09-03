@@ -23,15 +23,12 @@ export function BusinessStories() {
 
   return (
     <div className="self-center px-1 py-4">
-      <p className="text-[10px] font-bold uppercase tracking-[0.16em] text-brand-700">
-        Business stories
-      </p>
 
       <h2 className="mt-4 max-w-sm text-3xl font-semibold leading-[1.08] tracking-[-0.04em] sm:text-4xl">
         Built for Businesses That Want to Grow.
       </h2>
 
-      <div className="mt-8 max-w-md overflow-hidden border-l-2 border-brand-400 pl-4">
+      <div className="mt-8 max-w-sm overflow-hidden border-l-2 border-brand-400 pl-4">
         <div
           className="flex transition-transform duration-500 ease-out"
           style={{ transform: `translateX(-${activeStory * 100}%)` }}>

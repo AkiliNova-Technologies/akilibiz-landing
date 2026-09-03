@@ -5,46 +5,13 @@ import { ArrowRight } from "lucide-react";
 
 import { MarketingWideContainer } from "@/components/marketing/container";
 import { Button } from "@/components/ui/button";
+import { solutions } from "@/lib/solutions-data";
 
 export const metadata: Metadata = {
   title: "Solutions",
   description:
     "How AkiliBiz supports retail shops, supermarkets, pharmacies, hardware stores, fashion outlets, and growing multi-user businesses.",
 };
-
-const useCases = [
-  {
-    title: "Retail shops",
-    description:
-      "Track daily sales and stock for a single storefront, with receipts and customer credit handled in one place.",
-  },
-  {
-    title: "Supermarkets and mini-markets",
-    description:
-      "Manage a larger, faster-moving product range with stock-level visibility across many items sold every day.",
-  },
-  {
-    title: "Pharmacies and health shops",
-    description:
-      "Keep clear records of stock movement and sales for products where accurate tracking matters.",
-  },
-  {
-    title: "Hardware and building supplies",
-    description:
-      "Handle bulkier inventory, supplier purchasing, and customer credit for repeat trade accounts.",
-  },
-  {
-    title: "Fashion and general merchandise",
-    description:
-      "Organise products by category and variant, and keep sales and stock connected across a varied catalogue.",
-  },
-  {
-    title: "Growing multi-user businesses",
-    description:
-      "Bring on additional staff with role-based access as your team and daily transaction volume grow.",
-  },
-];
-
 
 export default function SolutionsPage() {
   return (
@@ -64,7 +31,6 @@ export default function SolutionsPage() {
 
         <MarketingWideContainer className="relative z-10 flex min-h-[360px] items-center">
           <div className="max-w-3xl text-white">
-
             <h1 className="mt-5 font-[family-name:var(--font-sora)] text-4xl font-semibold leading-[1.01] tracking-[-0.05em] sm:text-6xl lg:text-7xl">
               Built for the work behind every business day.
             </h1>
@@ -76,7 +42,6 @@ export default function SolutionsPage() {
             </p>
 
             <div className="mt-8 flex flex-wrap gap-3">
-
               <Button
                 asChild
                 variant="outlineOnDark"
@@ -93,24 +58,24 @@ export default function SolutionsPage() {
       <section className="px-4 py-16 sm:px-6 sm:py-24 lg:px-8">
         <MarketingWideContainer>
           <div className="grid gap-8 sm:grid-cols-[1fr_0.6fr] sm:items-end">
-            <div>
-
-              <h2 className="mt-4 max-w-2xl font-[family-name:var(--font-sora)] text-3xl font-semibold leading-[1.05] tracking-[-0.04em] sm:text-4xl lg:text-5xl">
+            <div className="space-y-6">
+              <h2 className="mt-4 max-w-3xl font-[family-name:var(--font-sora)] text-3xl font-semibold leading-[1.05] tracking-[-0.04em] sm:text-4xl lg:text-5xl">
                 One dependable foundation. Different ways to use it.
               </h2>
-            </div>
-
-            <p className="max-w-md text-sm leading-6 text-ink-600 sm:justify-self-end">
+            <p className="max-w-2xl text-sm leading-6 text-ink-600 sm:justify-self-end">
               Start with how your business already works. AkiliBiz helps bring
               the operational records behind it into one clear system.
             </p>
+            </div>
+
           </div>
 
           <div className="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-            {useCases.map(({ title, description }, index) => (
-              <article
-                key={title}
-                className="flex min-h-[265px] flex-col rounded-[30px] border border-ink-100 bg-white p-6 shadow-[0_20px_50px_-38px_rgba(16,34,53,.28)] transition-transform duration-300 hover:-translate-y-1"
+            {solutions.map(({ slug, title, shortDescription }, index) => (
+              <Link
+                key={slug}
+                href={`/solutions/${slug}`}
+                className="group flex min-h-[265px] flex-col rounded-[30px] border border-ink-100 bg-white p-6 shadow-[0_20px_50px_-38px_rgba(16,34,53,.28)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_25px_60px_-38px_rgba(16,34,53,.35)]"
               >
                 <span className="flex h-11 w-11 items-center justify-center rounded-full border border-brand-200 bg-brand-50 text-xs font-semibold tabular-nums tracking-[0.08em] text-brand-700">
                   {String(index + 1).padStart(2, "0")}
@@ -121,17 +86,14 @@ export default function SolutionsPage() {
                 </h3>
 
                 <p className="mt-3 text-sm leading-6 text-ink-500">
-                  {description}
+                  {shortDescription}
                 </p>
 
-                <Link
-                  href="/contact"
-                  className="mt-auto inline-flex items-center gap-2 pt-7 text-xs font-semibold text-ink-800 transition-transform hover:translate-x-0.5"
-                >
-                  Discuss your business
+                <span className="mt-auto inline-flex items-center gap-2 pt-7 text-xs font-semibold text-ink-800 transition-transform group-hover:translate-x-0.5">
+                  Learn more
                   <ArrowRight className="h-4 w-4" />
-                </Link>
-              </article>
+                </span>
+              </Link>
             ))}
           </div>
         </MarketingWideContainer>
@@ -175,7 +137,6 @@ export default function SolutionsPage() {
                   </Link>
                 </Button>
               </div>
-
             </div>
           </div>
         </MarketingWideContainer>

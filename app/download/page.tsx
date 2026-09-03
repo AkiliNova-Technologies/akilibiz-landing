@@ -80,8 +80,8 @@ function PlatformDownloads({
 
       {alternatives.length > 0 && (
         <DropdownMenu>
-          <DropdownMenuTrigger asChild>
-            <Button variant="ghost" size="sm" className="mt-2 w-full">
+          <DropdownMenuTrigger asChild className="">
+            <Button variant="ghost" className="mt-2 w-full text-ink-400 hover:bg-transparent hover:border hover:border-ink-100 hover:text-ink-500">
               Other installers
               <ChevronDown aria-hidden="true" />
             </Button>
@@ -286,23 +286,10 @@ export default async function DownloadPage() {
             </div>
           </div>
 
-          {downloads && (
-            <p className="mt-6 text-center text-sm text-ink-500">
-              Latest desktop release:{" "}
-              <a
-                href={downloads.releaseUrl}
-                target="_blank"
-                rel="noreferrer"
-                className="font-medium text-brand-700 underline underline-offset-4"
-              >
-                {downloads.version}
-              </a>
-            </p>
-          )}
         </MarketingWideContainer>
       </section>
 
-      <section className="px-4 py-16 sm:px-6 sm:py-24 lg:px-8">
+      <section className="px-4 pb-16 sm:px-6 lg:px-8">
         <MarketingWideContainer>
           <SectionHeading
             title="Take AkiliBiz with you."
@@ -337,6 +324,7 @@ export default async function DownloadPage() {
 
                   <div className="mt-6 grid gap-3 sm:grid-cols-2">
                     <Button variant="secondary" className="w-full" disabled>
+                      <Image src="/images/playstore-icon.svg" alt="Google Play" width={20} height={20} />
                       <span className="text-left leading-tight">
                         <span className="block text-[10px] font-normal text-ink-500">
                           Google Play
@@ -346,7 +334,7 @@ export default async function DownloadPage() {
                     </Button>
 
                     <Button variant="secondary" className="w-full" disabled>
-                      <Apple aria-hidden="true" />
+                      <Image src="/images/apple-icon.svg" alt="Apple App Store" width={20} height={20} />
                       <span className="text-left leading-tight">
                         <span className="block text-[10px] font-normal text-ink-500">
                           Apple App Store

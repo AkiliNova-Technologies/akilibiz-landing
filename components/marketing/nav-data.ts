@@ -4,6 +4,7 @@ import { BookOpen, HelpCircle } from "lucide-react";
 export const primaryNav = [
   { label: "Home", href: "/" },
   { label: "Solutions", href: "/solutions" },
+  { label: "Products", href: "/products" },
   { label: "Features", href: "/features" },
   { label: "Pricing", href: "/pricing" },
   { label: "Download", href: "/download" },
@@ -36,6 +37,7 @@ export const footerNav = {
   product: [
     { label: "Features", href: "/features" },
     { label: "Solutions", href: "/solutions" },
+    { label: "Products", href: "/products" },
     { label: "Pricing", href: "/pricing" },
     { label: "Download Desktop", href: "/download" },
   ],

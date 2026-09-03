@@ -1,8 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import {
-  ArrowRight,
-} from "lucide-react";
+import { ArrowRight, Laptop, Store } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { config } from "@/lib/config";
@@ -122,16 +120,15 @@ export function HomeEditorial() {
       <section className="px-4 py-14 sm:px-6 sm:py-20 lg:px-8">
         <div className="mx-auto max-w-[1480px]">
           <div className="grid gap-8 sm:grid-cols-[1fr_0.6fr] sm:items-end">
-            <div>
-              <h2 className="mt-4 max-w-xl text-3xl font-semibold leading-[1.05] tracking-[-0.04em] sm:text-4xl lg:text-5xl">
+            <div className="space-y-6">
+              <h2 className="mt-4 max-w-3xl text-3xl font-semibold leading-[1.05] tracking-[-0.04em] sm:text-4xl lg:text-5xl">
                 Everything Your Business Needs.
               </h2>
+              <p className="max-w-2xl text-sm leading-6 text-ink-600 sm:justify-self-end">
+                Replace scattered notebooks, spreadsheets and disconnected tools
+                with one dependable operating system for your business.
+              </p>
             </div>
-
-            <p className="max-w-md text-sm leading-6 text-ink-600 sm:justify-self-end">
-              Replace scattered notebooks, spreadsheets and disconnected tools
-              with one dependable operating system for your business.
-            </p>
           </div>
 
           <div className="mt-10 grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
@@ -172,6 +169,120 @@ export function HomeEditorial() {
                 </article>
               );
             })}
+          </div>
+        </div>
+      </section>
+
+      {/* Products ecosystem */}
+      <section className="px-4 pb-14 sm:px-6 sm:pb-20 lg:px-8">
+        <div className="mx-auto max-w-[1480px]">
+          <div className="grid gap-8 sm:grid-cols-[1fr_0.6fr] sm:items-end">
+            <div className="space-y-6">
+              <h2 className="mt-4 max-w-3xl text-3xl font-semibold leading-[1.05] tracking-[-0.04em] sm:text-4xl lg:text-5xl">
+                Not just software. A connected business platform.
+              </h2>
+              <p className="max-w-2xl text-sm leading-6 text-ink-600 sm:justify-self-end">
+                AkiliBiz is one ecosystem with multiple products that work
+                together from the desktop to the web, the marketplace, and
+                eventually mobile.
+              </p>
+            </div>
+          </div>
+
+          <div className="mt-10 grid gap-5 sm:grid-cols-2">
+            <Link
+              href="/products/web"
+              className="group flex min-h-[300px] flex-col rounded-[30px] border border-ink-100 bg-white p-7 shadow-[0_20px_50px_-38px_rgba(16,34,53,.32)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_25px_60px_-38px_rgba(16,34,53,.35)] sm:p-9">
+              <span className="flex h-15 w-15 shrink-0 items-center justify-center rounded-full border border-brand-200 bg-brand-50 text-xs font-semibold tabular-nums tracking-[0.08em] text-brand-700 transition-colors">
+                <Laptop className="h-7 w-7" aria-hidden="true" />
+              </span>
+
+              <h3 className="mt-8 text-xl font-semibold tracking-tight text-ink-900 sm:text-2xl">
+                AkiliBiz Business Web
+              </h3>
+
+              <p className="mt-3 max-w-md text-sm leading-6 text-ink-500">
+                Manage your business from anywhere with a web browser. Remote
+                access, multi-device management, and cloud-connected reporting
+                built on the same foundation as Desktop.
+              </p>
+
+              <div className="mt-5 flex flex-wrap gap-2">
+                {["Remote access", "Multi-device", "Cloud-connected"].map(
+                  (tag, index) => (
+                    <div
+                      key={tag}
+                      className="flex items-center gap-3 rounded-full bg-white/[0.04] backdrop-blur-md pl-1.5 pr-4 py-1.5 border border-ink-100">
+                      <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-brand-500/15 text-xs font-semibold tabular-nums tracking-[0.08em] text-ink-800 ">
+                        {String(index + 1).padStart(2, "0")}
+                      </span>
+                      <span className="text-sm font-medium leading-5 text-ink-800/85">
+                        {tag}
+                      </span>
+                    </div>
+                  ),
+                )}
+              </div>
+
+              <span className="mt-auto inline-flex items-center gap-2 pt-8 text-xs font-semibold text-ink-800 transition-transform group-hover:translate-x-0.5">
+                Learn more
+                <ArrowRight className="h-4 w-4" />
+              </span>
+            </Link>
+
+            <Link
+              href="/products/marketplace"
+              className="group relative flex min-h-[300px] flex-col rounded-[30px] border p-7 border-[#102235]/10 bg-[#102235] text-white shadow-[0_20px_50px_-35px_rgba(7,59,115,.7)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_25px_60px_-38px_rgba(16,34,53,.35)] sm:p-9 overflow-hidden">
+              <Image
+                src="/images/marketing/akilibiz-boutique-owner.png"
+                alt="A business owner using AkiliBiz to manage her shop"
+                fill
+                sizes="(min-width: 1024px) 90vw, 100vw"
+                className="object-cover object-[68%_center]"
+              />
+
+              <div className="absolute inset-0 bg-gradient-to-r from-[#0b1722] via-[#0b1722]/95 via-48% to-[#0b1722]/15" />
+
+              <div className="relative flex flex-col justify-between">
+                <span className="flex h-15 w-15 shrink-0 items-center justify-center rounded-full bg-brand-500/15 text-xs font-semibold tabular-nums tracking-[0.08em] text-brand-100">
+                  <Store className="h-7 w-7" aria-hidden="true" />
+                </span>
+
+                <h3 className="mt-8 text-xl font-semibold tracking-tight sm:text-2xl">
+                  AkiliBiz Marketplace
+                </h3>
+
+                <p className="mt-3 max-w-md text-sm leading-6 text-white/65">
+                  Help customers discover your products and place orders online.
+                  Connected to your business inventory so stock and sales stay
+                  in sync.
+                </p>
+
+                <div className="mt-5 flex flex-wrap gap-2">
+                  {[
+                    "Online ordering",
+                    "Product discovery",
+                    "Connected inventory",
+                  ].map((tag, index) => (
+                    <div
+                      key={tag}
+                      className="flex items-center gap-3 rounded-full bg-white/[0.04] backdrop-blur-md pl-1.5 pr-4 py-1.5">
+                      <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-brand-500/15 text-xs font-semibold tabular-nums tracking-[0.08em] text-brand-100 ">
+                        {String(index + 1).padStart(2, "0")}
+                      </span>
+                      <span className="text-sm font-medium leading-5 text-white/85">
+                        {tag}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+
+                <span className="mt-auto inline-flex items-center gap-2 pt-8 text-xs font-semibold transition-transform group-hover:translate-x-0.5">
+                  Learn more
+                  <ArrowRight className="h-4 w-4" />
+                </span>
+              </div>
+            </Link>
           </div>
         </div>
       </section>
