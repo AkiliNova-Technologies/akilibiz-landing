@@ -82,7 +82,7 @@ export default function ContactPage() {
     <main className="overflow-x-clip bg-surface-warm text-ink-900">
       <section className="relative min-h-[500px] overflow-hidden bg-[#06131f] px-4 py-20 sm:px-6 sm:py-24 lg:px-8">
         <Image
-          src="/images/marketing/akilibiz-business-team.png"
+          src="/images/marketing/akilibiz-business-team.jpg"
           alt="African business owners working together at a computer"
           fill
           priority

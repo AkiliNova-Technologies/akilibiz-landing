@@ -22,8 +22,8 @@ export function StoryAndCTA({
   primaryHref = "/contact",
   secondaryLabel,
   secondaryHref,
-  imageSrc = "/images/marketing/akilibiz-final-cta-team.png",
-  imageAlt = "",
+  imageSrc = "/images/marketing/akilibiz-final-cta-team.jpg",
+  imageAlt = "AkiliBiz team supporting growing businesses",
 }: {
   stories: StoryItem[];
   storyHeading?: string;

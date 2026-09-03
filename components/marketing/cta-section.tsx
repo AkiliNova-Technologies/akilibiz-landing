@@ -13,7 +13,7 @@ export function CTASection({
   primaryHref = "/contact",
   secondaryLabel,
   secondaryHref,
-  imageSrc = "/images/marketing/akilibiz-final-cta-team.png",
+  imageSrc = "/images/marketing/akilibiz-final-cta-team.jpg",
   imageAlt = "",
 }: {
   eyebrow?: string;

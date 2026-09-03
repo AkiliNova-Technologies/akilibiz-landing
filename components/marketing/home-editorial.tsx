@@ -234,7 +234,7 @@ export function HomeEditorial() {
               href="/products/marketplace"
               className="group relative flex min-h-[300px] flex-col rounded-[30px] border p-7 border-[#102235]/10 bg-[#102235] text-white shadow-[0_20px_50px_-35px_rgba(7,59,115,.7)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_25px_60px_-38px_rgba(16,34,53,.35)] sm:p-9 overflow-hidden">
               <Image
-                src="/images/marketing/akilibiz-boutique-owner.png"
+                src="/images/marketing/akilibiz-boutique-owner.jpg"
                 alt="A business owner using AkiliBiz to manage her shop"
                 fill
                 sizes="(min-width: 1024px) 90vw, 100vw"
@@ -292,7 +292,7 @@ export function HomeEditorial() {
         <div className="mx-auto max-w-[1480px]">
           <div className="relative min-h-[620px] overflow-hidden rounded-[1.75rem] bg-[#0b1722] text-white sm:min-h-[580px]">
             <Image
-              src="/images/marketing/akilibiz-boutique-owner.png"
+              src="/images/marketing/akilibiz-boutique-owner.jpg"
               alt="A business owner using AkiliBiz to manage her shop"
               fill
               sizes="(min-width: 1024px) 90vw, 100vw"
@@ -363,7 +363,7 @@ export function HomeEditorial() {
         primaryHref="/contact"
         secondaryLabel="Follow on WhatsApp"
         secondaryHref={config.whatsappChannelUrl}
-        imageSrc="/images/marketing/akilibiz-final-cta-team.png"
+        imageSrc="/images/marketing/akilibiz-final-cta-team.jpg"
       />
     </main>
   );

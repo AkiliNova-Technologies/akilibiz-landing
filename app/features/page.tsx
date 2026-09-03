@@ -88,7 +88,7 @@ export default function FeaturesPage() {
       {/* Hero */}
       <section className="relative min-h-[520px] overflow-hidden bg-[#06131f] px-4 py-20 sm:px-6 sm:py-24 lg:px-8">
         <Image
-          src="/images/marketing/akilibiz-business-team.png"
+          src="/images/marketing/akilibiz-business-team.jpg"
           alt=""
           fill
           priority
@@ -238,7 +238,7 @@ export default function FeaturesPage() {
         primaryHref="/contact"
         secondaryLabel="View Pricing"
         secondaryHref="/pricing"
-        imageSrc="/images/marketing/akilibiz-business-team.png"
+        imageSrc="/images/marketing/akilibiz-business-team.jpg"
       />
     </main>
   );

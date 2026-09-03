@@ -98,8 +98,8 @@ export const solutions: Solution[] = [
     closingHeading: "Start managing your shop with clarity.",
     closingDescription:
       "Download AkiliBiz Desktop or talk to us about setting up your shop with the right plan.",
-    image: "/images/marketing/akilibiz-boutique-owner.png",
-    imageAlt: "A retail shop owner managing daily operations with AkiliBiz",
+    image: "/images/marketing/akilibiz-boutique-owner.jpg",
+    imageAlt: "Retail shop owner managing daily sales and stock",
   },
   {
     slug: "supermarkets",
@@ -173,7 +173,7 @@ export const solutions: Solution[] = [
     closingHeading: "Bring clarity to your supermarket operations.",
     closingDescription:
       "Talk to us about how AkiliBiz fits your store's daily workflow.",
-    image: "/images/marketing/akilibiz-business-team.png",
+    image: "/images/marketing/akilibiz-business-team.jpg",
     imageAlt: "Supermarket team managing daily operations",
   },
   {
@@ -248,7 +248,7 @@ export const solutions: Solution[] = [
     closingHeading: "Manage your pharmacy with precision.",
     closingDescription:
       "Download AkiliBiz Desktop or speak with our team about your pharmacy's needs.",
-    image: "/images/marketing/akilibiz-business-team.png",
+    image: "/images/marketing/akilibiz-business-team.jpg",
     imageAlt: "Pharmacy operator managing stock and sales",
   },
   {
@@ -323,8 +323,8 @@ export const solutions: Solution[] = [
     closingHeading: "Run your hardware business with better visibility.",
     closingDescription:
       "Talk to us about how AkiliBiz supports hardware and building supply operations.",
-    image: "/images/marketing/akilibiz-business-team.png",
-    imageAlt: "Hardware store owner checking inventory and orders",
+    image: "/images/marketing/akilibiz-business-team.jpg",
+    imageAlt: "Hardware store owner managing inventory",
   },
   {
     slug: "fashion-boutiques",
@@ -398,8 +398,8 @@ export const solutions: Solution[] = [
     closingHeading: "Bring your boutique operations together.",
     closingDescription:
       "Download AkiliBiz Desktop or talk to us about managing your fashion business.",
-    image: "/images/marketing/akilibiz-boutique-owner.png",
-    imageAlt: "Fashion boutique owner organising products",
+    image: "/images/marketing/akilibiz-boutique-owner.jpg",
+    imageAlt: "Fashion boutique owner managing her shop",
   },
   {
     slug: "growing-businesses",
@@ -473,8 +473,8 @@ export const solutions: Solution[] = [
     closingHeading: "Ready to grow your team with the right tools?",
     closingDescription:
       "Talk to us about setting up AkiliBiz for your growing business.",
-    image: "/images/marketing/akilibiz-business-team.png",
-    imageAlt: "Growing business team collaborating on operations",
+    image: "/images/marketing/akilibiz-business-team.jpg",
+    imageAlt: "Growing business team managing operations",
   },
 ];
 

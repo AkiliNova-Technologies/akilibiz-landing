@@ -19,7 +19,7 @@ export default function SolutionsPage() {
       {/* Hero */}
       <section className="relative min-h-[520px] overflow-hidden bg-[#06131f] px-4 py-20 sm:px-6 sm:py-24 lg:px-8">
         <Image
-          src="/images/marketing/akilibiz-boutique-owner.png"
+          src="/images/marketing/akilibiz-boutique-owner.jpg"
           alt=""
           fill
           priority
@@ -104,7 +104,7 @@ export default function SolutionsPage() {
         <MarketingWideContainer>
           <div className="relative min-h-[520px] overflow-hidden rounded-[1.75rem] bg-[#0b1722] text-white">
             <Image
-              src="/images/marketing/akilibiz-business-team.png"
+              src="/images/marketing/akilibiz-business-team.jpg"
               alt="Business owners reviewing their daily operations together"
               fill
               sizes="(min-width: 1024px) 90vw, 100vw"

@@ -36,7 +36,7 @@ const mobileApps = [
     title: "AkiliBiz Business",
     description:
       "For business owners and staff to monitor operations, manage orders, stock, and customers while away from the counter.",
-    image: "/images/marketing/akilibiz-boutique-owner.png",
+    image: "/images/marketing/akilibiz-boutique-owner.jpg",
     alt: "A business owner working in her boutique",
     position: "object-[63%_center]",
   },
@@ -117,7 +117,7 @@ export default async function DownloadPage() {
     <main className="overflow-x-clip bg-surface-warm text-ink-900">
       <section className="relative min-h-[500px] overflow-hidden bg-[#06131f] px-4 py-20 sm:px-6 sm:py-24 lg:px-8">
         <Image
-          src="/images/marketing/akilibiz-business-team.png"
+          src="/images/marketing/akilibiz-business-team.jpg"
           alt="African business owners working together at a computer"
           fill
           priority

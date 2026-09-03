@@ -13,7 +13,7 @@ import { cn } from "@/lib/utils";
 export const metadata: Metadata = {
   title: "Products",
   description:
-    "Explore the AkiliBiz ecosystem — Business Desktop, Business Web, Marketplace, and the connected platform for growing African businesses.",
+    "Explore the AkiliBiz ecosystem Business Desktop, Business Web, Marketplace, and the connected platform for growing African businesses.",
 };
 
 export default function ProductsPage() {
@@ -96,7 +96,7 @@ export default function ProductsPage() {
                   {product.isFeatured && (
                     <div>
                       <Image
-                        src="/images/marketing/akilibiz-boutique-owner.png"
+                        src="/images/marketing/akilibiz-boutique-owner.jpg"
                         alt="A business owner using AkiliBiz to manage her shop"
                         fill
                         sizes="(min-width: 1024px) 90vw, 100vw"
@@ -228,7 +228,7 @@ export default function ProductsPage() {
         stories={[
           { text: "Desktop handles your daily sales and stock. Web lets you check in from anywhere. Marketplace brings customers to your products." },
           { text: "A shop owner in Entebbe started with Desktop for receipts and inventory, then added the web dashboard to monitor sales from home." },
-          { text: "As the ecosystem grows, your data stays connected — one business platform, not a collection of separate tools." },
+          { text: "As the ecosystem grows, your data stays connected one business platform, not a collection of separate tools." },
         ]}
         storyHeading="One platform, many ways to work."
         storyEyebrow="The AkiliBiz ecosystem"
@@ -238,7 +238,8 @@ export default function ProductsPage() {
         primaryHref="/download"
         secondaryLabel="View Pricing"
         secondaryHref="/pricing"
-        imageSrc="/images/marketing/akilibiz-hero-section.png"
+        imageAlt="AkiliBiz ecosystem connecting desktop, web, and marketplace"
+        imageSrc="/images/marketing/akilibiz-business-team.jpg"
       />
     </main>
   );

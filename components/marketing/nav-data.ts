@@ -33,7 +33,7 @@ export const resourcesLinks: NavLinkItem[] = [
   },
   {
     label: "Changelog",
-    href: "/changelog",
+    href: "/docs/changelog",
     description: "Product updates and release notes",
     icon: FileText,
   },

@@ -77,7 +77,7 @@ export default function MarketplacePage() {
         eyebrow="Stay in the loop"
         stories={[
           { text: "AkiliBiz Marketplace connects your products with customers who are looking for exactly what you sell." },
-          { text: "Your product catalogue, stock levels, and orders stay in sync with your AkiliBiz Business account — no double entry." },
+          { text: "Your product catalogue, stock levels, and orders stay in sync with your AkiliBiz Business account no double entry." },
           { text: "Customers can browse, order, and pay online while you manage everything from Desktop or Web." },
         ]}
         storyHeading="Your products, discoverable online."
@@ -86,7 +86,8 @@ export default function MarketplacePage() {
         description="Reach out and we'll let you know as this becomes available."
         primaryLabel="Contact us"
         primaryHref="/contact"
-        imageSrc="/images/marketing/akilibiz-hero-section.png"
+        imageAlt="Business team managing online marketplace operations"
+        imageSrc="/images/marketing/akilibiz-business-team.jpg"
       />
     </>
   );

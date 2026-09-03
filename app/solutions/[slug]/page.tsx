@@ -183,7 +183,7 @@ export default async function SolutionDetailPage({
         <MarketingWideContainer>
           <div className="relative min-h-[480px] overflow-hidden rounded-[1.75rem] bg-[#0b1722] text-white">
             <Image
-              src="/images/marketing/akilibiz-boutique-owner.png"
+              src="/images/marketing/akilibiz-boutique-owner.jpg"
               alt="A business owner using AkiliBiz to manage her shop"
               fill
               sizes="(min-width: 1024px) 90vw, 100vw"
@@ -223,7 +223,7 @@ export default async function SolutionDetailPage({
         stories={[
           { text: `Whether you run a ${solution.title.toLowerCase()} or another type of business, AkiliBiz adapts to the way your operations actually work.` },
           { text: "Start with the features that matter most to your daily workflow, then expand as your business grows and your needs change." },
-          { text: "Talk to us about how AkiliBiz fits your specific business — we will help you find the right way to get started." },
+          { text: "Talk to us about how AkiliBiz fits your specific business we will help you find the right way to get started." },
         ]}
         storyHeading={solution.closingHeading}
         storyEyebrow={solution.title}
@@ -233,7 +233,7 @@ export default async function SolutionDetailPage({
         primaryHref="/contact"
         secondaryLabel="View Pricing"
         secondaryHref="/pricing"
-        imageSrc="/images/marketing/akilibiz-boutique-owner.png"
+        imageSrc="/images/marketing/akilibiz-boutique-owner.jpg"
       />
 
       {/* Other solutions */}

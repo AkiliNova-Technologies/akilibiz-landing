@@ -40,7 +40,7 @@ The AkiliBiz marketing site is a **well-structured early-stage marketing scaffol
 ### Framework and versions
 
 | Dependency | Version | Notes |
-|---|---|---|
+| --- | --- | --- |
 | Next.js | 16.3.3 | App Router, Turbopack build |
 | React | 19.2.8 | Server components, client components |
 | Tailwind CSS | v4 | `@theme inline` in CSS, no `tailwind.config` file |
@@ -62,7 +62,7 @@ The AkiliBiz marketing site is a **well-structured early-stage marketing scaffol
 ### Main landing-site routes (13 total, all statically generated)
 
 | Route | File | Purpose |
-|---|---|---|
+| --- | --- | --- |
 | `/` | `app/page.tsx` | Homepage with hero, capability chips, feature grid, product ecosystem, CTA |
 | `/solutions` | `app/solutions/page.tsx` | Business-type audience segments |
 | `/features` | `app/features/page.tsx` | Detailed feature breakdown with alternating sections |
@@ -77,7 +77,7 @@ The AkiliBiz marketing site is a **well-structured early-stage marketing scaffol
 ### Shared layout
 
 | File | Purpose |
-|---|---|
+| --- | --- |
 | `app/layout.tsx` | Root layout: metadata, imports globals.css, renders navbar + main + footer |
 
 Only one layout file exists. There are no nested layouts, no route groups, and no `error.tsx` or `not-found.tsx` files.
@@ -87,7 +87,7 @@ Only one layout file exists. There are no nested layouts, no route groups, and n
 **Marketing components** (`components/marketing/`):
 
 | File | Purpose |
-|---|---|
+| --- | --- |
 | `marketing-navbar.tsx` | Sticky top nav with desktop dropdowns and mobile slide-in dialog |
 | `marketing-footer.tsx` | Four-column footer with Product/Resources/Company sections |
 | `nav-data.ts` | Centralized navigation data (primary, resources, products, footer) |
@@ -105,7 +105,7 @@ Only one layout file exists. There are no nested layouts, no route groups, and n
 **Base UI components** (`components/ui/`):
 
 | File | Purpose |
-|---|---|
+| --- | --- |
 | `button.tsx` | Button with 5 variants (primary, secondary, ghost, outlineOnDark, link) and 4 sizes |
 | `badge.tsx` | Badge with 4 variants (brand, available, soon, neutral) |
 | `input.tsx` | Text input |
@@ -119,7 +119,7 @@ Only one layout file exists. There are no nested layouts, no route groups, and n
 ### Utility
 
 | File | Purpose |
-|---|---|
+| --- | --- |
 | `lib/utils.ts` | `cn()` function: `clsx` + `twMerge` |
 
 ---
@@ -131,7 +131,7 @@ Only one layout file exists. There are no nested layouts, no route groups, and n
 All meaningful colors are defined in `app/globals.css` as CSS custom properties and mapped to Tailwind v4 via `@theme inline`.
 
 | Role | Current value | Defined in | Used in | Assessment | Recommendation |
-|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- |
 | Background | `#ffffff` | `globals.css` :root | Global body | Clean white, correct | Keep |
 | Foreground / Body text | `#16152b` → `#14132a` (ink-900) | `globals.css` | Body, headings | Very dark navy, good readability | Keep |
 | Brand 950 (CTA dark bg) | `#14103a` | `globals.css` | CTA section bg, pricing highlighted | Deep indigo, strong | Keep |
@@ -163,11 +163,13 @@ All meaningful colors are defined in `app/globals.css` as CSS custom properties 
 ### Typography
 
 **Font families:**
+
 - `--font-sans`: `"Inter"` declared in `@theme inline` in `globals.css`
 - `--font-mono`: system monospace stack
 - **No `next/font` import exists anywhere** — the README claims Geist is used but the layout does not import it. The CSS declares `Inter` as the font family, but **no CSS `@import` or `<link>` loads Inter from Google Fonts or any CDN.** The browser will fall back to `ui-sans-serif, system-ui, ...`. This means the site is using system fonts by default.
 
 **Font sizes used (from Tailwind classes):**
+
 - `text-[11px]` — eyebrow badges
 - `text-[10px]` — small "Soon" badges
 - `text-[13px]` — dashboard tile labels
@@ -184,6 +186,7 @@ All meaningful colors are defined in `app/globals.css` as CSS custom properties 
 - `text-[3.25rem]` (52px) — hero heading on desktop
 
 **Font weights used:**
+
 - `font-medium` (500) — nav items, badges, eyebrow labels, form inputs
 - `font-semibold` (600) — headings, card titles, logo
 - `font-mono` — eyebrow pill labels only
@@ -197,15 +200,18 @@ All meaningful colors are defined in `app/globals.css` as CSS custom properties 
 ### Spacing, Layout, and Grid
 
 **Container:**
+
 - `MarketingContainer`: `max-w-6xl` (1152px) + `px-6 lg:px-8` — a single container width used everywhere. This is clean but may feel constrained on ultrawide displays.
 
 **Section padding:**
+
 - Hero: `py-16 sm:py-20` top, `pb-20 lg:pb-28` bottom
 - Feature sections: `py-20 sm:py-24`
 - Inner sections: `py-16 sm:py-20`
 - Alternating sections on features page use the same padding values
 
 **Grid patterns:**
+
 - Hero: `lg:grid-cols-2`
 - Feature cards: `sm:grid-cols-2 lg:grid-cols-3`
 - Product ecosystem: `sm:grid-cols-2 lg:grid-cols-3`
@@ -221,6 +227,7 @@ All meaningful colors are defined in `app/globals.css` as CSS custom properties 
 ### Shapes, Surfaces, and Effects
 
 **Border radii (usage frequency):**
+
 - `rounded-full` — pills, buttons, badges, status dots, nav items (most common interactive shape)
 - `rounded-2xl` (1rem) — cards, form fields, accordions, notice boxes, CTA sections (most common surface)
 - `rounded-3xl` — contact form container, CTA dark section
@@ -230,6 +237,7 @@ All meaningful colors are defined in `app/globals.css` as CSS custom properties 
 The base `--radius` is `1rem`, used with Tailwind's calculated variants (`rounded-md` = 10px, `rounded-sm` = 6px). However, most components use `rounded-2xl` (16px) or `rounded-xl` (12px) directly rather than the theme radius tokens.
 
 **Shadows:**
+
 - `shadow-[0_1px_2px_rgba(20,19,42,0.04)]` — card resting state (very subtle)
 - `shadow-[0_18px_40px_-20px_rgba(67,56,184,0.35)]` — feature card hover (purple-tinted)
 - `shadow-[0_15px_35px_-10px_rgba(67,56,184,0.6)]` — hero hub (strong purple)
@@ -240,6 +248,7 @@ The base `--radius` is `1rem`, used with Tailwind's calculated variants (`rounde
 **Assessment:** Shadow system uses two tones: purple-tinted (brand color at higher opacity) for interactive/brand elements, and neutral dark for resting surfaces. This is a coherent two-tone shadow system.
 
 **Gradients:**
+
 - Hero background: `from-lavender-50 to-white` (linear, vertical)
 - Logo mark: `linear-gradient(135deg, var(--brand-600), var(--brand-blue))` — indigo to blue
 - Text gradient: `.text-gradient-brand` class — brand-600 to brand-blue (used on "clarity" in hero)
@@ -247,11 +256,13 @@ The base `--radius` is `1rem`, used with Tailwind's calculated variants (`rounde
 - Grid dot pattern: `.bg-grid-fade` class — radial dot grid (defined but usage not found)
 
 **Blur/glass effects:**
+
 - Navbar: `backdrop-blur-md` on `bg-white/85` — glassmorphism header
 - Mobile menu overlay: `backdrop-blur-[2px]` on semi-transparent dark
 - Decorative blur blobs behind hero and CTA sections
 
 **Button styles:**
+
 - Primary: brand-600 bg, white text, purple shadow, rounded-full, hover brand-700
 - Secondary: white bg, ink-200 border, hover brand-400 border + brand-700 text
 - Ghost: transparent, hover ink-100 bg
@@ -259,11 +270,13 @@ The base `--radius` is `1rem`, used with Tailwind's calculated variants (`rounde
 - Link: brand-700 text, underline on hover
 
 **Form styles:**
+
 - Inputs: rounded-xl, ink-200 border, brand-500 border on focus
 - Select: same styling (but using native `<select>` element, not styled)
 - Textarea: same as input with min-height
 
 **Hover/focus/active:**
+
 - Cards: shadow transition on hover (feature-card only)
 - Nav items: background color transition
 - Buttons: color transition 150ms
@@ -271,6 +284,7 @@ The base `--radius` is `1rem`, used with Tailwind's calculated variants (`rounde
 - Focus: `outline: 2px solid var(--brand-600)` with 2px offset (global `:focus-visible`)
 
 **Animations:**
+
 - Float animation: `float-slow` (7s) and `float-slower` (9s) — gentle vertical oscillation on hero dashboard tiles
 - Accordion content: no animation (explicitly `animate-none`)
 - All animations respect `prefers-reduced-motion`
@@ -286,12 +300,14 @@ The base `--radius` is `1rem`, used with Tailwind's calculated variants (`rounde
 **Purpose:** Primary site navigation with sticky positioning and mobile responsiveness.
 
 **Existing content:**
+
 - Logo mark (inline SVG) + "AkiliBiz" wordmark
 - Desktop: Home, Solutions, Features, Pricing, Resources (dropdown), Products (dropdown)
 - Desktop CTA: "Request a Demo" (ghost) + "Get Started" (primary)
 - Mobile: Hamburger → slide-in dialog with full nav + dropdowns + CTAs
 
 **Strengths:**
+
 - Clean hierarchy between primary nav and dropdowns
 - "Soon" badges on planned products set honest expectations
 - Mobile nav is a proper slide-in panel, not a janky overlay
@@ -299,6 +315,7 @@ The base `--radius` is `1rem`, used with Tailwind's calculated variants (`rounde
 - Glassmorphism background works well conceptually
 
 **Weaknesses:**
+
 - No logo SVG file — the logo is an inline hand-coded SVG that looks like a zigzag/chart line. It's ambiguous and not memorable.
 - Both CTAs ("Request a Demo" and "Get Started") go to `/contact` — they should be differentiated.
 - No language selector (Uganda has English + Luganda + Swahili audiences).
@@ -309,6 +326,7 @@ The base `--radius` is `1rem`, used with Tailwind's calculated variants (`rounde
 **Purpose:** First impression — communicate what AkiliBiz is and invite action.
 
 **Existing content:**
+
 - Eyebrow: "Business management, connected."
 - H1: "Run your business with clarity." (with gradient on "clarity")
 - Body: 2 sentences about bringing operations into one system
@@ -316,11 +334,13 @@ The base `--radius` is `1rem`, used with Tailwind's calculated variants (`rounde
 - Visual: `HeroDashboardVisual` — schematic diagram with floating cards
 
 **Strengths:**
+
 - Copy is clear, confident, and specific about what the product covers
 - The gradient text on "clarity" is tasteful
 - Two CTAs with appropriate differentiation (primary action vs. exploration)
 
 **Weaknesses:**
+
 - The hero visual is the biggest weakness. It shows abstract floating cards labeled "Today's Sales" / "Stock Alerts" / "VAT Summary" / "Business Insights" connected by SVG lines to a central hub. This looks like a design-system demo, not a product.
 - No product screenshot, no real interface glimpse
 - The tagline "Run your business with clarity" is good but generic — it could be any business tool
@@ -328,6 +348,7 @@ The base `--radius` is `1rem`, used with Tailwind's calculated variants (`rounde
 - The capability chips strip below is well-done but reads as feature checklist
 
 **Content gaps:**
+
 - No mention of offline-first capability in the hero (this is a key differentiator)
 - No mention of Uganda, Africa, or local context
 - No specific numbers or proof points
@@ -337,11 +358,13 @@ The base `--radius` is `1rem`, used with Tailwind's calculated variants (`rounde
 **Purpose:** Show the AkiliBiz product family (Desktop, Business web, Marketplace).
 
 **Strengths:**
+
 - Clear differentiation between "Available now" and "Coming soon"
 - Product Route Card component is well-designed
 - Honest about what's available vs. planned
 
 **Weaknesses:**
+
 - Two of three products are "coming soon" — this makes the ecosystem section feel empty
 - No screenshots for any product
 - The copy for "Business" and "Marketplace" is speculative ("Manage your business from the web as your team and operations grow")
@@ -351,12 +374,14 @@ The base `--radius` is `1rem`, used with Tailwind's calculated variants (`rounde
 **Purpose:** Detailed feature breakdown organized by functional area.
 
 **Strengths:**
+
 - 6 feature sections cover the full product: Sales & POS, Inventory, Customers & Suppliers, VAT & Reports, Business Insights, Security/Roles
 - Each section has a description + 3 bullet-point cards in a 2-column grid
 - Alternating lavender backgrounds provide visual rhythm
 - Copy is grounded in operational reality, not marketing fluff
 
 **Weaknesses:**
+
 - No visual evidence — every section is text-only. No screenshots, no diagrams, no workflow illustrations.
 - The 3-point cards per section feel generic ("Point-of-sale workflow built for daily, repeated use" could be any POS)
 - The page is long with no visual breaks — all text, no images
@@ -366,11 +391,13 @@ The base `--radius` is `1rem`, used with Tailwind's calculated variants (`rounde
 **Purpose:** Show how AkiliBiz applies to different business types.
 
 **Strengths:**
+
 - Covers 6 relevant business types: retail shops, supermarkets, pharmacies, hardware, fashion, growing multi-user businesses
 - Each gets a clear, specific description
 - The "one core system" section at the bottom ties it together
 
 **Weaknesses:**
+
 - All cards are visually identical — no way to distinguish which solution matters to a specific visitor
 - No links from solution cards to relevant features or use-case stories
 - No Ugandan or East African context (no mention of markets, trading centers, matooke shops, kiosks)
@@ -382,12 +409,14 @@ The base `--radius` is `1rem`, used with Tailwind's calculated variants (`rounde
 **Purpose:** Show pricing tiers and encourage contact.
 
 **Strengths:**
+
 - Three tiers (Starter, Growth, Business) with clear differentiation
 - "Most popular" badge on Growth plan
 - FAQ section addressing why prices aren't listed
 - Honest about pricing being custom/tailored
 
 **Weaknesses:**
+
 - No prices shown at all — this is a significant conversion barrier
 - "Custom pricing · Request a quote" is generic and could feel evasive
 - No ROI information, no "saves X hours/week" claims
@@ -398,11 +427,13 @@ The base `--radius` is `1rem`, used with Tailwind's calculated variants (`rounde
 **Purpose:** Primary conversion point — demo requests, enquiries, support.
 
 **Strengths:**
+
 - Clean form layout with sensible fields (name, business, contact, help topic, message)
 - Good UX: success state with clear messaging
 - Left sidebar has "Enquiries" and "Where we work" info cards
 
 **Weaknesses:**
+
 - **The form does not work.** It explicitly says "This form isn't connected to a live submission service yet." This is the biggest functional gap on the site.
 - No phone number, no WhatsApp link, no physical address (critical for a Uganda-focused business product)
 - The "Where we work" card says "AkiliBiz supports businesses getting started with digitising daily operations" — this is not an address or location info
@@ -414,11 +445,13 @@ The base `--radius` is `1rem`, used with Tailwind's calculated variants (`rounde
 **Purpose:** Address common questions.
 
 **Strengths:**
+
 - 9 well-chosen questions covering offline support, stock, VAT, multi-user, web version, marketplace, CSV import, subscriptions, mobile money
 - Honest answers that acknowledge what's available and what's planned
 - Clean accordion UI
 
 **Weaknesses:**
+
 - No questions about pricing specifics, implementation timeline, data security, or support
 - No search functionality (minor for 9 items)
 - Could be more detailed — each answer is 1-2 sentences
@@ -428,12 +461,14 @@ The base `--radius` is `1rem`, used with Tailwind's calculated variants (`rounde
 **Purpose:** Site-wide navigation, legal, branding.
 
 **Strengths:**
+
 - Three organized columns: Product, Resources, Company
 - Logo + tagline in first column
 - Copyright with dynamic year
 - "Soon" badges on planned products
 
 **Weaknesses:**
+
 - No privacy policy link
 - No terms of service link
 - No physical address or contact info
@@ -446,11 +481,13 @@ The base `--radius` is `1rem`, used with Tailwind's calculated variants (`rounde
 **Purpose:** Distribute AkiliBiz Desktop.
 
 **Strengths:**
+
 - Three platforms covered (Windows, macOS, Linux)
 - Good offline-first messaging
 - "Available now" / "Coming soon" status for download links vs. feature availability
 
 **Weaknesses:**
+
 - **No actual download links.** All buttons say "Coming to this page soon" and are disabled.
 - No system requirements
 - No screenshots of the desktop app
@@ -462,11 +499,13 @@ The base `--radius` is `1rem`, used with Tailwind's calculated variants (`rounde
 **Purpose:** Help center / knowledge base.
 
 **Strengths:**
+
 - 9 guide topics listed with icons and descriptions
 - Covers a realistic range of topics from getting started to security
 - "Coming soon" notice is prominent
 
 **Weaknesses:**
+
 - No actual content — just topic outlines
 - No search
 - This is purely a placeholder page
@@ -476,11 +515,13 @@ The base `--radius` is `1rem`, used with Tailwind's calculated variants (`rounde
 **Purpose:** Announce and describe planned products.
 
 **Strengths:**
+
 - Honest about "coming soon" status
 - Feature cards describe the value proposition clearly
 - CTAs redirect to contact or download
 
 **Weaknesses:**
+
 - These pages exist primarily as SEO placeholders
 - No visual concept for what these products will look like
 - Could be consolidated into a single "Roadmap" or "What's Next" page
@@ -492,6 +533,7 @@ The base `--radius` is `1rem`, used with Tailwind's calculated variants (`rounde
 ### Logo treatment
 
 **Current state:** The logo (`components/marketing/logo.tsx`) is:
+
 - An inline SVG path resembling a zigzag chart line (`M2 12.5 6 3.5 8 8l2-2.5 4 7`)
 - Wrapped in a rounded-xl gradient box (brand-600 → brand-blue, 135deg)
 - Paired with the text "AkiliBiz" in 17px semibold
@@ -504,6 +546,7 @@ The base `--radius` is `1rem`, used with Tailwind's calculated variants (`rounde
 **Library:** `lucide-react` v1.37.0 — a high-quality, consistent line-icon library.
 
 **Usage:** Icons are used consistently:
+
 - Feature icons: ShoppingCart, Boxes, Handshake, Receipt, BarChart3, TrendingUp, ShieldCheck
 - Navigation icons: BookOpen, Download, HelpCircle, LayoutDashboard, ShoppingBag
 - UI icons: ArrowRight, ChevronDown, Menu, X, Check, Clock, Sparkles, Info, Mail, MapPin, CheckCircle2, Link2, PackageSearch, ReceiptText, Waypoints, WifiOff
@@ -514,6 +557,7 @@ The base `--radius` is `1rem`, used with Tailwind's calculated variants (`rounde
 ### Images
 
 **Current state:** Zero images in the entire marketing site.
+
 - `public/` contains only Next.js/Vercel boilerplate SVGs (`vercel.svg`, `next.svg`, `window.svg`, `file.svg`, `globe.svg`) — none are referenced by any component
 - No product screenshots
 - No photography
@@ -551,6 +595,7 @@ The base `--radius` is `1rem`, used with Tailwind's calculated variants (`rounde
 ### Mobile navigation and layout
 
 **Confirmed from code inspection:**
+
 - Mobile nav uses a Radix Dialog component that slides in from the right (`inset-y-0 right-0`, full height, `max-w-sm`). This is a proper mobile drawer.
 - Nav links close the dialog via `DialogClose`
 - Mobile menu button is visible only below `lg` breakpoint (`lg:hidden`)
@@ -561,6 +606,7 @@ The base `--radius` is `1rem`, used with Tailwind's calculated variants (`rounde
 ### Breakpoints
 
 Tailwind v4 default breakpoints (no customization found):
+
 - `sm`: 640px
 - `md`: 768px (not used)
 - `lg`: 1024px
@@ -572,6 +618,7 @@ Tailwind v4 default breakpoints (no customization found):
 ### Overflow risks
 
 **Confirmed from code inspection:**
+
 - `overflow-hidden` is used on hero section and CTA dark section (intentional for decorative blur blobs)
 - The hero dashboard visual uses absolute positioning with `left: 0`, `right: 0`, etc. — could overflow on very narrow screens below `sm`
 - `lg:-left-4` and `lg:-right-3` on floating status chips could create horizontal scrollbar on tablet sizes if not properly contained
@@ -590,6 +637,7 @@ Tailwind v4 default breakpoints (no customization found):
 ### Keyboard navigation
 
 **Confirmed:**
+
 - `:focus-visible` global outline on brand-600 (2px, 2px offset)
 - All interactive elements are native buttons or links
 - Dropdown menus use Radix primitives which handle keyboard navigation
@@ -600,6 +648,7 @@ Tailwind v4 default breakpoints (no customization found):
 ### Color contrast
 
 **Estimated from code:**
+
 - Brand 700 (`#4338b8`) on white: contrast ratio ~4.6:1 (passes AA for normal text)
 - Brand 600 (`#5941d9`) on white: contrast ratio ~4.1:1 (marginal for small text)
 - Ink 500 (`#656487`) on white: contrast ratio ~5.0:1 (passes AA)
@@ -628,6 +677,7 @@ Tailwind v4 default breakpoints (no customization found):
 ### Reduced motion
 
 **Confirmed from `globals.css`:**
+
 ```css
 @media (prefers-reduced-motion: reduce) {
   html { scroll-beduced-motion: auto; }
@@ -639,11 +689,13 @@ Tailwind v4 default breakpoints (no customization found):
   }
 }
 ```
+
 The hero dashboard tiles use `motion-safe:animate-float-slow` which correctly disables animation when reduced motion is preferred.
 
 ### Form feedback and error states
 
 **Confirmed issues:**
+
 - The `<select>` element in the contact form uses native browser styling, not matching the rest of the form
 - `noValidate` is set on the form element, disabling native validation
 - No custom validation messages or error states are implemented
@@ -657,10 +709,12 @@ The hero dashboard tiles use `motion-safe:animate-float-slow` which correctly di
 ### Page titles and metadata
 
 **Layout-level (all pages):**
+
 - Title template: `"%s · AkiliBiz"` with default `"AkiliBiz — Run your business with clarity"`
 - Description: "AkiliBiz brings sales, inventory, customers, suppliers, VAT, reporting, and business insights into one connected system for growing businesses."
 
 **Page-level titles:**
+
 - Features: "Features"
 - Pricing: "Pricing"
 - Solutions: "Solutions"
@@ -697,6 +751,7 @@ The hero dashboard tiles use `motion-safe:animate-float-slow` which correctly di
 ### Font loading
 
 **Issue:** The CSS declares `font-family: "Inter"` but **no mechanism loads the Inter font**. There is:
+
 - No `next/font/google` import in `app/layout.tsx`
 - No CSS `@import url(...)` for Google Fonts
 - No `<link>` tag for font files
@@ -836,7 +891,7 @@ The current brand-600/700 indigo is distinctive enough to keep as the primary �
 
 ### Primary navigation
 
-```
+```text
 Home
 Solutions    (who it's for)
 Features     (what it does)
@@ -848,13 +903,14 @@ Resources ▾
 ```
 
 **Changes from current:**
+
 - Remove "Products" dropdown (Business and Marketplace are not ready — hide them until launch)
 - Move "Download" to primary nav (it's the main conversion action today)
 - Keep Resources as a dropdown
 
 ### Secondary navigation (footer)
 
-```
+```text
 Product
   Features · Solutions · Pricing · Download Desktop · Roadmap
 Resources
@@ -864,6 +920,7 @@ Company
 ```
 
 **Changes from current:**
+
 - Add "Roadmap" to replace individual Business/Marketplace pages
 - Add "About" page
 - Add "Privacy" and "Terms" pages (required for credibility)
@@ -872,7 +929,7 @@ Company
 ### Core pages
 
 | Page | Status | Priority | Notes |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | Home | Exists | Refine | Needs screenshots, social proof, stronger hero |
 | Features | Exists | Refine | Needs visuals in each feature section |
 | Solutions | Exists | Refine | Needs Ugandan context, could become more story-driven |
@@ -903,7 +960,7 @@ Company
 ### Content to keep, remove, consolidate, or add
 
 | Content | Action | Rationale |
-|---|---|---|
+| --- | --- | --- |
 | Hero copy | Keep, refine | Core message is strong |
 | Capability chips strip | Keep | Good visual summary |
 | 6-card feature grid | Keep, add screenshots | Good coverage, needs visuals |
@@ -930,7 +987,7 @@ Company
 *Establish the design system, fix infrastructure, and prepare for visual additions.*
 
 | # | Item | Priority | Impact | Effort | Dependencies | Files likely to change |
-|---|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- | --- |
 | A1 | Load Inter font properly via `next/font/google` | Critical | High | Small | None | `app/layout.tsx`, `app/globals.css` |
 | A2 | Diagnose and fix `text-ink-700` / `style={{ color }}` override issue | Critical | Medium | Small | None | `globals.css`, 7 component/page files |
 | A3 | Create proper favicon (SVG + ICO + apple-touch-icon) | Critical | High | Small | Logo design | `app/favicon.ico`, `app/layout.tsx`, `public/` |
@@ -947,7 +1004,7 @@ Company
 *Transform the homepage from a text-heavy template into a credible product story.*
 
 | # | Item | Priority | Impact | Effort | Dependencies | Files likely to change |
-|---|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- | --- |
 | B1 | Create or obtain product screenshots of AkiliBiz Desktop | Critical | Very High | Large | Access to running product | New assets in `public/` |
 | B2 | Replace hero schematic with real product screenshot + device mockup | Critical | Very High | Medium | B1 | `components/marketing/hero-dashboard-visual.tsx` |
 | B3 | Add a "How it works" section to homepage (sell → track → report) | High | High | Medium | B1 (screenshots) | `app/page.tsx`, new component |
@@ -962,7 +1019,7 @@ Company
 *Fix broken conversion flows, consolidate placeholder pages, add substance.*
 
 | # | Item | Priority | Impact | Effort | Dependencies | Files likely to change |
-|---|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- | --- |
 | C1 | Connect contact form to a submission service (Formspree, Resend, etc.) | Critical | Very High | Medium | Service choice + API key | `app/contact/page.tsx`, env config |
 | C2 | Add phone number + WhatsApp link to contact page and footer | Critical | High | Small | Business decision | `app/contact/page.tsx`, `components/marketing/marketing-footer.tsx` |
 | C3 | Add real or estimated pricing to pricing page | High | High | Medium | Pricing strategy | `app/pricing/page.tsx`, `components/marketing/pricing-card.tsx` |
@@ -977,7 +1034,7 @@ Company
 *QA, performance, accessibility, analytics, and content refinement.*
 
 | # | Item | Priority | Impact | Effort | Dependencies | Files likely to change |
-|---|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- | --- |
 | D1 | Responsive QA across mobile/tablet/desktop — fix overflow issues | High | High | Medium | None | Various |
 | D2 | Accessibility audit with automated tools + manual testing | High | Medium | Medium | None | Various |
 | D3 | Add analytics (Plausible, PostHog, or similar — privacy-respecting) | High | Medium | Small | Service choice | `app/layout.tsx` |
@@ -990,7 +1047,7 @@ Company
 ### Summary table
 
 | Phase | Critical items | High items | Total estimated timeline |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | A — Foundations | 4 | 3 | 1-2 weeks |
 | B — Landing Page Story | 2 | 3 | 2-3 weeks (longer if screenshots aren't ready) |
 | C — Product & Conversion | 2 | 2 | 1-2 weeks |

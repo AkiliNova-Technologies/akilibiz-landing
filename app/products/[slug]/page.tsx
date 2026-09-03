@@ -152,7 +152,7 @@ export default async function ProductDetailPage({
         <MarketingWideContainer>
           <div className="relative min-h-[480px] overflow-hidden rounded-[1.75rem] bg-[#0b1722] text-white">
             <Image
-              src="/images/marketing/akilibiz-boutique-owner.png"
+              src="/images/marketing/akilibiz-boutique-owner.jpg"
               alt="A business owner using AkiliBiz to manage her shop"
               fill
               sizes="(min-width: 1024px) 90vw, 100vw"
@@ -204,7 +204,7 @@ export default async function ProductDetailPage({
       <StoryAndCTA
         layout="reversed"
         stories={[
-          { text: `${product.name} is part of the AkiliBiz ecosystem — designed to work with Desktop, Web, and Marketplace as one connected platform.` },
+          { text: `${product.name} is part of the AkiliBiz ecosystem designed to work with Desktop, Web, and Marketplace as one connected platform.` },
           { text: "Whether you are managing a single shop or growing across locations, each product in the ecosystem serves a specific part of your operations." },
           { text: product.status === "coming-soon" ? "This product is currently in development. Get in touch to learn more or be notified when it becomes available." : `Start with ${product.name} today and expand into the full ecosystem as your business grows.` },
         ]}

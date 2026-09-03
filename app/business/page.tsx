@@ -76,7 +76,7 @@ export default function BusinessPage() {
         layout="reversed"
         eyebrow="Stay in the loop"
         stories={[
-          { text: "AkiliBiz Business Web will let you check sales, inventory, and reports from any browser — at home, in the office, or on the road." },
+          { text: "AkiliBiz Business Web will let you check sales, inventory, and reports from any browser at home, in the office, or on the road." },
           { text: "Built on the same foundation as Desktop, so your data and workflows stay consistent across every device." },
           { text: "Multi-branch management, remote team access, and cloud-connected reporting are all part of the plan." },
         ]}
@@ -88,7 +88,8 @@ export default function BusinessPage() {
         primaryHref="/contact"
         secondaryLabel="Download Desktop"
         secondaryHref="/download"
-        imageSrc="/images/marketing/akilibiz-business-team.png"
+        imageAlt="Business team using web-based management tools"
+        imageSrc="/images/marketing/akilibiz-business-team.jpg"
       />
     </>
   );
