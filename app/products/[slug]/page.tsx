@@ -5,7 +5,7 @@ import { notFound } from "next/navigation";
 import { ArrowRight } from "lucide-react";
 
 import { MarketingWideContainer } from "@/components/marketing/container";
-import { CTASection } from "@/components/marketing/cta-section";
+import { StoryAndCTA } from "@/components/marketing/story-and-cta";
 import { Button } from "@/components/ui/button";
 import { getProduct, getAllProductSlugs } from "@/lib/products-data";
 
@@ -201,7 +201,15 @@ export default async function ProductDetailPage({
         </MarketingWideContainer>
       </section>
 
-      <CTASection
+      <StoryAndCTA
+        layout="reversed"
+        stories={[
+          { text: `${product.name} is part of the AkiliBiz ecosystem — designed to work with Desktop, Web, and Marketplace as one connected platform.` },
+          { text: "Whether you are managing a single shop or growing across locations, each product in the ecosystem serves a specific part of your operations." },
+          { text: product.status === "coming-soon" ? "This product is currently in development. Get in touch to learn more or be notified when it becomes available." : `Start with ${product.name} today and expand into the full ecosystem as your business grows.` },
+        ]}
+        storyHeading="Part of something bigger."
+        storyEyebrow="The AkiliBiz ecosystem"
         title={
           product.status === "coming-soon"
             ? "Be among the first to know when this is ready."

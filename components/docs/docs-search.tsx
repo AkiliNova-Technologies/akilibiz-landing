@@ -74,7 +74,7 @@ export function DocsSearch() {
         aria-label="Search guides"
         aria-expanded={isOpen && hasQuery}
         aria-controls="docs-search-results"
-        className="h-9 w-full rounded-lg border-white/10 bg-white/8 py-2 pl-10 pr-14 text-sm text-white placeholder:text-white/40 focus-visible:border-white/30 focus-visible:bg-white/12 focus-visible:ring-white/15"
+        className="h-11 w-full rounded-full bg-white/8 py-2 pl-10 pr-14 text-sm text-white placeholder:text-white/40 focus-visible:border-white/30 focus-visible:bg-white/12 focus-visible:ring-white/15"
       />
       <Kbd className="pointer-events-none absolute right-3 top-1/2 h-5 -translate-y-1/2 rounded bg-white/8 px-1 text-[10px] text-white/45">
         ⌘K

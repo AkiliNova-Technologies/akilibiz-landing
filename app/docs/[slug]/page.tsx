@@ -72,7 +72,7 @@ export default async function GuidePage({
             <li
               key={step}
               id={"step-" + (index + 1)}
-              className="flex gap-3 text-[15px] text-ink-600">
+              className="flex gap-3 text-[15px] text-ink-600 items-center">
               <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-ink-100 text-[11px] font-semibold text-ink-600">
                 {index + 1}
               </span>

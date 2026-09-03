@@ -4,7 +4,7 @@ import { ArrowRight, Laptop, Store } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { config } from "@/lib/config";
-import { BusinessStories } from "./business-stories";
+import { StoryAndCTA } from "./story-and-cta";
 
 type Feature = {
   title: string;
@@ -345,57 +345,26 @@ export function HomeEditorial() {
       </section>
 
       {/* Story and CTA */}
-      <section className="px-4 pb-14 sm:px-6 sm:pb-20 lg:px-8">
-        <div className="mx-auto grid max-w-[1480px] gap-8 lg:grid-cols-[0.62fr_1.38fr]">
-          <BusinessStories />
-
-          <div className="relative min-h-[360px] overflow-hidden rounded-[1.75rem] bg-brand-700 p-7 text-white sm:min-h-[400px] sm:p-11">
-            <Image
-              src="/images/marketing/akilibiz-final-cta-team.png"
-              alt=""
-              fill
-              sizes="(min-width: 1024px) 65vw, 100vw"
-              className="object-cover object-right"
-            />
-
-            <div className="absolute inset-0 bg-gradient-to-r from-brand-700 via-brand-700/90 to-brand-900/20" />
-
-            <div className="relative flex h-full max-w-xl flex-col justify-center">
-              <h2 className="text-3xl font-semibold leading-[1.08] tracking-[-0.04em] sm:text-5xl">
-                Build a Stronger Business With AkiliBiz.
-              </h2>
-
-              <p className="mt-5 max-w-md text-sm leading-6 text-white/82">
-                Start simplifying daily operations, improving visibility, and
-                building a business that is ready to grow.
-              </p>
-
-              <div className="mt-8 flex flex-wrap gap-3">
-                <Button
-                  asChild
-                  className="h-12 rounded-full bg-[#102235] px-5 hover:bg-[#1a3352]">
-                  <Link href="/contact">
-                    Book a Demo
-                    <ArrowRight />
-                  </Link>
-                </Button>
-
-                <Button
-                  asChild
-                  variant="outlineOnDark"
-                  className="h-12 rounded-full px-5">
-                  <a
-                    href={config.whatsappChannelUrl}
-                    target="_blank"
-                    rel="noopener noreferrer">
-                    Follow on WhatsApp
-                  </a>
-                </Button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <StoryAndCTA
+        stories={[
+          {
+            text: "From managing orders in notebooks to running a reliable online shop, Sarah's boutique now serves customers across Kampala every day.",
+          },
+          {
+            text: "A small catering team turned repeat WhatsApp requests into a polished digital storefront that makes booking simple for every client.",
+          },
+          {
+            text: "What began as a neighborhood electronics stall is now a growing business with a professional presence customers can trust.",
+          },
+        ]}
+        title="Build a Stronger Business With AkiliBiz."
+        description="Start simplifying daily operations, improving visibility, and building a business that is ready to grow."
+        primaryLabel="Book a Demo"
+        primaryHref="/contact"
+        secondaryLabel="Follow on WhatsApp"
+        secondaryHref={config.whatsappChannelUrl}
+        imageSrc="/images/marketing/akilibiz-final-cta-team.png"
+      />
     </main>
   );
 }

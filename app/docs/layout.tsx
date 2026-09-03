@@ -11,7 +11,7 @@ export default function DocsLayout({
   return (
     <div className="min-h-screen bg-white">
       <style>{`body > header, body > footer { display: none; }`}</style>
-      <header className="sticky top-0 z-40 border-b border-white/15 bg-[#06131f] px-4 backdrop-blur sm:px-6">
+      <header className="sticky top-0 z-40 bg-[#06131f] px-4 backdrop-blur sm:px-6">
         <div className="mx-auto flex h-16 max-w-[1480px] items-center gap-6">
           <DocsMobileNav />
           <div className="flex shrink-0 items-center gap-2">
@@ -28,7 +28,7 @@ export default function DocsLayout({
             <Link href="/docs/api-reference" className="hover:text-white">
               API Reference
             </Link>
-            <Link href="/changelog" className="hover:text-white">
+            <Link href="/docs/changelog" className="hover:text-white">
               Changelog
             </Link>
           </nav>

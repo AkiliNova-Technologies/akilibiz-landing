@@ -32,22 +32,19 @@ export default function PricingPage() {
 
         <MarketingWideContainer className="relative z-10 flex min-h-[340px] items-center">
           <div className="max-w-3xl text-white">
-
             <h1 className="mt-5 font-[family-name:var(--font-sora)] text-4xl font-semibold leading-[1.01] tracking-[-0.05em] sm:text-6xl lg:text-7xl">
               A plan for where your business is now.
             </h1>
 
             <p className="mt-6 max-w-xl text-sm leading-6 text-white/65 sm:text-base">
-              Start with the AkiliBiz tools your business needs today, then
-              move forward with more support and capability as your operations
-              grow.
+              Start with the AkiliBiz tools your business needs today, then move
+              forward with more support and capability as your operations grow.
             </p>
 
             <div className="mt-8 flex flex-wrap gap-3">
               <Button
                 asChild
-                className="h-12 rounded-full bg-brand-600 px-5 text-sm font-semibold hover:bg-brand-500"
-              >
+                className="h-12 rounded-full bg-brand-600 px-5 text-sm font-semibold hover:bg-brand-500">
                 <Link href="/contact">
                   Talk to us
                   <ArrowRight />
@@ -57,8 +54,7 @@ export default function PricingPage() {
               <Button
                 asChild
                 variant="outlineOnDark"
-                className="h-12 rounded-full px-5 text-sm"
-              >
+                className="h-12 rounded-full px-5 text-sm">
                 <Link href="/features">Explore Features</Link>
               </Button>
             </div>
@@ -70,25 +66,20 @@ export default function PricingPage() {
       <section className="px-4 py-16 sm:px-6 sm:py-24 lg:px-8">
         <MarketingWideContainer>
           <div className="grid gap-8 sm:grid-cols-[1fr_0.6fr] sm:items-end">
-            <div>
-              <h2 className="mt-4 max-w-2xl font-[family-name:var(--font-sora)] text-3xl font-semibold leading-[1.05] tracking-[-0.04em] sm:text-4xl lg:text-5xl">
+            <div className="flex flex-col gap-4">
+              <h2 className="mt-4 max-w-3xl font-[family-name:var(--font-sora)] text-3xl font-semibold leading-[1.05] tracking-[-0.04em] sm:text-4xl lg:text-5xl">
                 Clear plans for businesses at different stages.
               </h2>
+              <p className="max-w-2xl text-sm leading-6 text-ink-600 sm:justify-self-end">
+                Each plan is structured around your team, daily operations, and
+                level of support. We can help you choose the right fit.
+              </p>
             </div>
-
-            <p className="max-w-md text-sm leading-6 text-ink-600 sm:justify-self-end">
-              Each plan is structured around your team, daily operations, and
-              level of support. We can help you choose the right fit.
-            </p>
           </div>
 
           <div className="mt-10 grid items-stretch gap-3 lg:grid-cols-3">
             {pricingPackages.map((plan, index) => (
-              <PricingCard
-                key={plan.id}
-                plan={plan}
-                position={index + 1}
-              />
+              <PricingCard key={plan.id} plan={plan} position={index + 1} />
             ))}
           </div>
         </MarketingWideContainer>

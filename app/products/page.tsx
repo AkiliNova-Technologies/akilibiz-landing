@@ -4,7 +4,7 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
 import { MarketingWideContainer } from "@/components/marketing/container";
-import { CTASection } from "@/components/marketing/cta-section";
+import { StoryAndCTA } from "@/components/marketing/story-and-cta";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { products } from "@/lib/products-data";
@@ -223,13 +223,22 @@ export default function ProductsPage() {
         </MarketingWideContainer>
       </section>
 
-      <CTASection
+      <StoryAndCTA
+        layout="reversed"
+        stories={[
+          { text: "Desktop handles your daily sales and stock. Web lets you check in from anywhere. Marketplace brings customers to your products." },
+          { text: "A shop owner in Entebbe started with Desktop for receipts and inventory, then added the web dashboard to monitor sales from home." },
+          { text: "As the ecosystem grows, your data stays connected — one business platform, not a collection of separate tools." },
+        ]}
+        storyHeading="One platform, many ways to work."
+        storyEyebrow="The AkiliBiz ecosystem"
         title="Ready to bring your business operations together?"
         description="Start with AkiliBiz Desktop today, and explore the full ecosystem as it grows."
         primaryLabel="Download Desktop"
         primaryHref="/download"
         secondaryLabel="View Pricing"
         secondaryHref="/pricing"
+        imageSrc="/images/marketing/akilibiz-hero-section.png"
       />
     </main>
   );

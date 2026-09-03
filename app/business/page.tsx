@@ -5,7 +5,7 @@ import { MarketingWideContainer } from "@/components/marketing/container";
 import { SectionHeading } from "@/components/marketing/section-heading";
 import { ComingSoonNotice } from "@/components/marketing/coming-soon-notice";
 import { FeatureCard } from "@/components/marketing/feature-card";
-import { CTASection } from "@/components/marketing/cta-section";
+import { StoryAndCTA } from "@/components/marketing/story-and-cta";
 
 export const metadata: Metadata = {
   title: "AkiliBiz Business (Coming Soon)",
@@ -72,14 +72,23 @@ export default function BusinessPage() {
         </MarketingWideContainer>
       </section>
 
-      <CTASection
+      <StoryAndCTA
+        layout="reversed"
         eyebrow="Stay in the loop"
+        stories={[
+          { text: "AkiliBiz Business Web will let you check sales, inventory, and reports from any browser — at home, in the office, or on the road." },
+          { text: "Built on the same foundation as Desktop, so your data and workflows stay consistent across every device." },
+          { text: "Multi-branch management, remote team access, and cloud-connected reporting are all part of the plan." },
+        ]}
+        storyHeading="Manage your business from anywhere."
+        storyEyebrow="Coming soon"
         title="Want to hear when AkiliBiz Business is ready?"
         description="Reach out and we'll let you know as this becomes available."
         primaryLabel="Contact us"
         primaryHref="/contact"
         secondaryLabel="Download Desktop"
         secondaryHref="/download"
+        imageSrc="/images/marketing/akilibiz-business-team.png"
       />
     </>
   );

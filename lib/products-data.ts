@@ -3,6 +3,7 @@ import {
   Store,
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
+import { config } from "@/lib/config";
 
 export type Product = {
   slug: string;
@@ -160,6 +161,8 @@ export const products: Product[] = [
       "AkiliBiz Marketplace is designed to work together with AkiliBiz Business, not as a separate system. A merchant adds products in AkiliBiz Business, maintains stock through the business system, and publishes eligible products to Marketplace. When a customer places an order, it flows back into the merchant's AkiliBiz operations as a sale that affects inventory, reporting, and financial records. This integration is one of the defining advantages of the AkiliBiz ecosystem.",
     ctaLabel: "Get notified when available",
     ctaHref: "/contact",
+    secondaryCtaLabel: "Follow on WhatsApp",
+    secondaryCtaHref: config.whatsappChannelUrl,
   },
 ];
 

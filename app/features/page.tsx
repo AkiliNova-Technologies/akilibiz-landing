@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
-import { CTASection } from "@/components/marketing/cta-section";
+import { StoryAndCTA } from "@/components/marketing/story-and-cta";
 import { MarketingWideContainer } from "@/components/marketing/container";
 import { Button } from "@/components/ui/button";
 
@@ -124,7 +124,7 @@ export default function FeaturesPage() {
       </section>
 
       {/* Feature sections */}
-      <div className="bg-surface-warm">
+      <div className="bg-surface-warm mb-16">
         {sections.map((section, index) => {
           const darkSection = index === sections.length - 1;
           const sectionNumber = String(index + 1).padStart(2, "0");
@@ -223,13 +223,22 @@ export default function FeaturesPage() {
         })}
       </div>
 
-      <CTASection
+      <StoryAndCTA
+        layout="reversed"
+        stories={[
+          { text: "A hardware store owner in Ntinda now tracks every purchase order and knows exactly which products earn the most margin." },
+          { text: "A Kampala pharmacy uses AkiliBiz to manage expiry dates, track controlled stock, and reconcile daily sales with confidence." },
+          { text: "A growing supermarket team uses role-based access so each staff member sees only the parts of the system they need." },
+        ]}
+        storyHeading="Real businesses, real operations."
+        storyEyebrow="How AkiliBiz is used"
         title="Ready to see AkiliBiz on your own operations?"
         description="Talk to us about how AkiliBiz fits your day-to-day sales, stock, and reporting needs."
         primaryLabel="Book a Demo"
         primaryHref="/contact"
         secondaryLabel="View Pricing"
         secondaryHref="/pricing"
+        imageSrc="/images/marketing/akilibiz-business-team.png"
       />
     </main>
   );

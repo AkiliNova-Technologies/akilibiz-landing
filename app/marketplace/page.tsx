@@ -5,7 +5,7 @@ import { MarketingWideContainer } from "@/components/marketing/container";
 import { SectionHeading } from "@/components/marketing/section-heading";
 import { ComingSoonNotice } from "@/components/marketing/coming-soon-notice";
 import { FeatureCard } from "@/components/marketing/feature-card";
-import { CTASection } from "@/components/marketing/cta-section";
+import { StoryAndCTA } from "@/components/marketing/story-and-cta";
 
 export const metadata: Metadata = {
   title: "AkiliBiz Marketplace (Coming Soon)",
@@ -72,12 +72,21 @@ export default function MarketplacePage() {
         </MarketingWideContainer>
       </section>
 
-      <CTASection
+      <StoryAndCTA
+        layout="reversed"
         eyebrow="Stay in the loop"
+        stories={[
+          { text: "AkiliBiz Marketplace connects your products with customers who are looking for exactly what you sell." },
+          { text: "Your product catalogue, stock levels, and orders stay in sync with your AkiliBiz Business account — no double entry." },
+          { text: "Customers can browse, order, and pay online while you manage everything from Desktop or Web." },
+        ]}
+        storyHeading="Your products, discoverable online."
+        storyEyebrow="Coming soon"
         title="Want to hear when AkiliBiz Marketplace is ready?"
         description="Reach out and we'll let you know as this becomes available."
         primaryLabel="Contact us"
         primaryHref="/contact"
+        imageSrc="/images/marketing/akilibiz-hero-section.png"
       />
     </>
   );

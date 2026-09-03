@@ -1,17 +1,9 @@
-const RELEASES_API =
-  "https://api.github.com/repos/AkiliNova-Technologies/akilibiz-releases/releases/latest";
-
-type GitHubReleaseAsset = {
-  name: string;
-  browser_download_url: string;
-};
-
-type GitHubRelease = {
-  tag_name: string;
-  html_url: string;
-  published_at: string | null;
-  assets: GitHubReleaseAsset[];
-};
+import {
+  type GitHubRelease,
+  type GitHubReleaseAsset,
+  LATEST_RELEASE_API,
+  GITHUB_ACCEPT_HEADER,
+} from "@/lib/github-types";
 
 export type LatestAkiliBizDownloads = {
   version: string;
@@ -34,9 +26,9 @@ function findAsset(
 }
 
 export async function getLatestAkiliBizDownloads(): Promise<LatestAkiliBizDownloads | null> {
-  const response = await fetch(RELEASES_API, {
+  const response = await fetch(LATEST_RELEASE_API, {
     headers: {
-      Accept: "application/vnd.github+json",
+      Accept: GITHUB_ACCEPT_HEADER,
     },
     next: {
       revalidate: 300,

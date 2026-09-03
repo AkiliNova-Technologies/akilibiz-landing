@@ -1,5 +1,5 @@
 import type { LucideIcon } from "lucide-react";
-import { BookOpen, HelpCircle } from "lucide-react";
+import { BookOpen, FileText, HelpCircle } from "lucide-react";
 
 export const primaryNav = [
   { label: "Home", href: "/" },
@@ -31,6 +31,12 @@ export const resourcesLinks: NavLinkItem[] = [
     description: "Answers to common questions",
     icon: HelpCircle,
   },
+  {
+    label: "Changelog",
+    href: "/changelog",
+    description: "Product updates and release notes",
+    icon: FileText,
+  },
 ];
 
 export const footerNav = {
@@ -44,6 +50,7 @@ export const footerNav = {
   resources: [
     { label: "Documentation", href: "/docs" },
     { label: "FAQ", href: "/faq" },
+    { label: "Changelog", href: "/changelog" },
   ],
   company: [
     { label: "Contact us", href: "/contact" },
