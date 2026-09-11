@@ -17,6 +17,7 @@ import {
 } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
 import { config } from "@/lib/config";
+import { ContactEnquiryLabel, ContactQueryFields } from "./query-context";
 
 const helpOptions = [
   "General enquiry",
@@ -158,6 +159,7 @@ export default function ContactPage() {
                       We’ll use the details below to respond with the most
                       useful next step.
                     </p>
+                    <React.Suspense fallback={null}><ContactEnquiryLabel /></React.Suspense>
                   </div>
                 </div>
                 <form
@@ -167,6 +169,7 @@ export default function ContactPage() {
                   <p className="sr-only" aria-live="polite">
                     {isSubmitting ? "Sending enquiry…" : submitError}
                   </p>
+                  <React.Suspense fallback={null}><ContactQueryFields /></React.Suspense>
                   <div className="sr-only" aria-hidden="true">
                     <Label htmlFor="website">Website</Label>
                     <Input

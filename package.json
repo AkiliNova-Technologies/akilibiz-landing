@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "test": "node lib/download-platform.test.mjs"
+    "test": "node --test lib/*.test.mjs"
   },
   "dependencies": {
     "@base-ui/react": "^1.7.0",

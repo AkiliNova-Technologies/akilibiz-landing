@@ -18,6 +18,9 @@ type ContactSubmission = {
   help: string;
   message: string;
   website: string;
+  plan: string;
+  billing: string;
+  enquiry: string;
 };
 
 const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -45,6 +48,9 @@ function getSubmission(body: unknown): ContactSubmission {
     help: value("help"),
     message: value("message"),
     website: value("website"),
+    plan: value("plan"),
+    billing: value("billing"),
+    enquiry: value("enquiry"),
   };
 }
 
@@ -81,10 +87,16 @@ function validateSubmission(
     errors.message = "Enter a message of up to 5,000 characters.";
   }
 
+  if (submission.plan && !["starter", "growth", "pro", "enterprise"].includes(submission.plan)) errors.plan = "Choose a valid plan.";
+  if (submission.billing && !["monthly", "annual"].includes(submission.billing)) errors.billing = "Choose a valid billing interval.";
+  if (submission.enquiry && submission.enquiry !== "trial") errors.enquiry = "Choose a valid enquiry type.";
+
   return errors;
 }
 
 function getEmailSubject(submission: ContactSubmission): string {
+  if (submission.enquiry === "trial") return `Free trial enquiry · ${submission.business}`;
+  if (submission.plan) return `${submission.plan[0].toUpperCase()}${submission.plan.slice(1)} plan enquiry · ${submission.business}`;
   switch (submission.help) {
     case "Request a demo":
       return `New demo request · ${submission.business}`;
@@ -159,6 +171,9 @@ export async function POST(request: Request) {
     submittedAt,
     logoUrl: new URL("/Logo.png", config.siteUrl).toString(),
     siteUrl: config.siteUrl,
+    plan: submission.plan,
+    billing: submission.billing,
+    enquiry: submission.enquiry,
   });
 
   try {

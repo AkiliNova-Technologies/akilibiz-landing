@@ -4,6 +4,9 @@ export type AkiliBizContactEnquiry = {
   contact: string;
   help: string;
   message: string;
+  plan?: string;
+  billing?: string;
+  enquiry?: string;
   submittedAt?: Date;
 };
 
@@ -51,11 +54,19 @@ export function buildAkiliBizContactEmail({
   contact,
   help,
   message,
+  plan,
+  billing,
+  enquiry,
   logoUrl,
   siteUrl,
   submittedAt = new Date(),
 }: ContactEmailTemplateOptions): { html: string; text: string } {
   const contactLink = getContactLink(contact);
+  const pricingContext = enquiry === "trial"
+    ? "30-Day Free Trial"
+    : plan
+      ? `${plan[0].toUpperCase()}${plan.slice(1)} plan${billing ? ` · ${billing === "annual" ? "Yearly" : "Monthly"}` : ""}`
+      : "";
 
   const safe = {
     name: escapeHtml(name),
@@ -67,6 +78,7 @@ export function buildAkiliBizContactEmail({
     siteUrl: siteUrl ? escapeHtml(siteUrl) : "",
     submittedAt: escapeHtml(formatSubmittedAt(submittedAt)),
     contactLink: contactLink ? escapeHtml(contactLink) : "",
+    pricingContext: escapeHtml(pricingContext),
   };
 
   const contactAction = safe.contactLink
@@ -292,6 +304,8 @@ export function buildAkiliBizContactEmail({
                         `
                     }
 
+                    ${safe.pricingContext ? `<p style="margin:14px 0 0;color:#526173;font-size:13px;line-height:20px;"><strong>Pricing interest:</strong> ${safe.pricingContext}</p>` : ""}
+
                   </td>
                 </tr>
               </table>
@@ -428,6 +442,7 @@ ${help}
 Business: ${business}
 Name: ${name}
 Contact: ${contact}
+${pricingContext ? `Pricing interest: ${pricingContext}\n` : ""}
 
 Message:
 ${message}

@@ -4,9 +4,8 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
 import { MarketingWideContainer } from "@/components/marketing/container";
-import { PricingCard } from "@/components/marketing/pricing-card";
+import { PricingPlans } from "@/components/marketing/pricing-plans";
 import { Button } from "@/components/ui/button";
-import { pricingPackages } from "@/lib/pricing-data";
 
 export const metadata: Metadata = {
   title: "Pricing",
@@ -37,16 +36,17 @@ export default function PricingPage() {
             </h1>
 
             <p className="mt-6 max-w-xl text-sm leading-6 text-white/65 sm:text-base">
-              Start with the AkiliBiz tools your business needs today, then move
-              forward with more support and capability as your operations grow.
+              Start with the AkiliBiz tools your business needs today, try them
+              free for 30 days, then choose the plan that fits as your
+              operations grow.
             </p>
 
             <div className="mt-8 flex flex-wrap gap-3">
               <Button
                 asChild
                 className="h-12 rounded-full bg-brand-600 px-5 text-sm font-semibold hover:bg-brand-500">
-                <Link href="/contact">
-                  Talk to us
+                <Link href="/contact?enquiry=trial">
+                  Start Your Free Trial
                   <ArrowRight />
                 </Link>
               </Button>
@@ -57,6 +57,13 @@ export default function PricingPage() {
                 className="h-12 rounded-full px-5 text-sm">
                 <Link href="/features">Explore Features</Link>
               </Button>
+            </div>
+            <div className="mt-4">
+              <Link
+                href="/contact"
+                className="text-sm text-white/70 underline-offset-4 transition-colors hover:text-white hover:underline">
+                Talk to us about your business
+              </Link>
             </div>
           </div>
         </MarketingWideContainer>
@@ -77,11 +84,7 @@ export default function PricingPage() {
             </div>
           </div>
 
-          <div className="mt-10 grid items-stretch gap-3 lg:grid-cols-3">
-            {pricingPackages.map((plan, index) => (
-              <PricingCard key={plan.id} plan={plan} position={index + 1} />
-            ))}
-          </div>
+          <PricingPlans />
         </MarketingWideContainer>
       </section>
     </main>

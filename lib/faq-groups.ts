@@ -62,7 +62,7 @@ export const faqGroups: FAQGroup[] = [
       {
         question: "Can I try AkiliBiz before choosing a paid plan?",
         answer:
-          "Trial, onboarding, and plan availability may change as AkiliBiz develops. Check the Pricing page or contact the AkiliBiz team for the currently available options.",
+          "Yes. AkiliBiz offers a 30-day free trial so you can explore the product before selecting a paid plan. Contact the team to start your trial.",
       },
       {
         question: "Can AkiliBiz help me move from paper records or spreadsheets?",
@@ -532,12 +532,12 @@ export const faqGroups: FAQGroup[] = [
       {
         question: "How much does AkiliBiz cost?",
         answer:
-          "AkiliBiz offers different plans intended for businesses with different needs. Refer to the Pricing page for the latest available packages and included features.",
+          "AkiliBiz plans start at UGX 30,000 per month for Starter. Growth is UGX 55,000 per month, Pro is UGX 150,000 per month, and Enterprise is tailored from UGX 250,000 per month. See the Pricing page for yearly options and included features.",
       },
       {
         question: "How do AkiliBiz subscriptions work?",
         answer:
-          "Subscription structures are being developed around different business needs and product capabilities. Current plan arrangements and available billing methods are shown on the Pricing page or can be confirmed with the AkiliBiz team.",
+          "Choose the plan that fits your business after your 30-day trial. The Pricing page shows the current plan options, while the AkiliBiz team can help with questions about the right fit.",
       },
       {
         question: "Are all AkiliBiz features included in every plan?",
@@ -557,12 +557,17 @@ export const faqGroups: FAQGroup[] = [
       {
         question: "Will there be monthly and annual plans?",
         answer:
-          "Billing options will be presented on the Pricing page as subscription management becomes fully available.",
+          "Yes. Starter, Growth, and Pro are available with monthly or yearly pricing. Yearly pricing saves UGX 60,000, UGX 110,000, and UGX 300,000 respectively compared with twelve monthly payments.",
       },
       {
         question: "Will I have to pay separately for AkiliBiz Marketplace?",
         answer:
           "Marketplace pricing and commercial terms have not yet been finalised publicly. They may differ from AkiliBiz Business subscriptions because marketplace services involve different infrastructure and customer-facing capabilities.",
+      },
+      {
+        question: "How does Enterprise pricing work?",
+        answer:
+          "Enterprise starts from UGX 250,000 per month and is tailored to your organisation’s onboarding, support, training, and operational requirements. Contact Sales for a custom annual arrangement.",
       },
       {
         question: "Are payment-processing fees included in my AkiliBiz subscription?",
@@ -831,4 +836,3 @@ export const faqGroups: FAQGroup[] = [
     ],
   },
 ];
-
