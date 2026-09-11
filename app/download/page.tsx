@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { headers } from "next/headers";
 import Image from "next/image";
 import {
   Apple,
@@ -22,6 +23,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { getLatestAkiliBizDownloads } from "@/lib/akilibiz-downloads";
+import { detectDownloadPlatform } from "@/lib/download-platform";
 
 export const metadata: Metadata = {
   title: "Download",
@@ -30,6 +32,7 @@ export const metadata: Metadata = {
 };
 
 export const revalidate = 300;
+export const dynamic = "force-dynamic";
 
 const mobileApps = [
   {
@@ -54,13 +57,22 @@ type PlatformDownloadsProps = {
   primaryHref?: string;
   primaryLabel: string;
   alternatives: { label: string; href: string }[];
+  chromeOs?: boolean;
 };
 
 function PlatformDownloads({
   primaryHref,
   primaryLabel,
   alternatives,
+  chromeOs = false,
 }: PlatformDownloadsProps) {
+  if (chromeOs) {
+    return (
+      <p className="rounded-xl border border-amber-300/35 bg-amber-100/10 px-4 py-3 text-sm leading-6 text-amber-50">
+        Windows installers are unavailable for Chrome OS.
+      </p>
+    );
+  }
   if (!primaryHref) {
     return (
       <Button variant="secondary" className="w-full" disabled>
@@ -107,6 +119,12 @@ function PlatformDownloads({
 }
 
 export default async function DownloadPage() {
+  const requestHeaders = await headers();
+  const platform = detectDownloadPlatform({
+    userAgent: requestHeaders.get("user-agent") ?? "",
+    clientPlatform: requestHeaders.get("sec-ch-ua-platform") ?? "",
+  });
+  const chromeOs = platform === "chrome-os";
   const downloads = await getLatestAkiliBizDownloads();
 
   const releaseStatus = downloads
@@ -148,6 +166,16 @@ export default async function DownloadPage() {
             title="A dependable desk for the work behind every sale."
             description="Download the desktop application for the daily operations that keep your business moving."
           />
+
+          {chromeOs && (
+            <div
+              role="alert"
+              className="mt-8 rounded-2xl border border-amber-300/50 bg-amber-50 px-5 py-4 text-sm leading-6 text-amber-950 shadow-sm"
+            >
+              <strong className="font-semibold">Chrome OS detected.</strong>{" "}
+              AkiliBiz Desktop does not currently provide a native Chrome OS installer. Windows .exe and .msi installers will not run directly on a Chromebook.
+            </div>
+          )}
 
           <div className="mt-10 grid grid-cols-1 gap-5 lg:grid-cols-[minmax(0,1.5fr)_minmax(0,0.85fr)]">
             <article className="rounded-[30px] border border-[#102235]/10 bg-[#102235] p-6 text-white shadow-[0_24px_60px_-36px_rgba(6,19,31,.72)] sm:p-8">
@@ -200,6 +228,7 @@ export default async function DownloadPage() {
                 <PlatformDownloads
                   primaryHref={downloads?.windowsExe}
                   primaryLabel="Download .exe setup"
+                  chromeOs={chromeOs}
                   alternatives={
                     downloads?.windowsMsi
                       ? [
@@ -229,7 +258,9 @@ export default async function DownloadPage() {
                 </h3>
 
                 <p className="mt-2 text-sm leading-6 text-ink-500">
-                  For common desktop distributions.
+                  {chromeOs
+                    ? "Advanced/experimental on Chrome OS. This configuration is not verified or officially supported."
+                    : "For common desktop distributions."}
                 </p>
 
                 <div className="mt-6">
