@@ -57,7 +57,7 @@ export default function SolutionsPage() {
       {/* Business types */}
       <section className="px-4 py-16 sm:px-6 sm:py-24 lg:px-8">
         <MarketingWideContainer>
-          <div className="grid gap-8 sm:grid-cols-[1fr_0.6fr] sm:items-end">
+          <div className="grid grid-cols-1 gap-8 sm:grid-cols-[1fr_0.6fr] sm:items-end">
             <div className="space-y-6">
               <h2 className="mt-4 max-w-3xl font-[family-name:var(--font-sora)] text-3xl font-semibold leading-[1.05] tracking-[-0.04em] sm:text-4xl lg:text-5xl">
                 One dependable foundation. Different ways to use it.

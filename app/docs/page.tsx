@@ -18,7 +18,7 @@ export default function DocsPage() {
         </div>
       </aside>
 
-      <article>
+      <article className="prose max-w-none px-2 sm:px-4 md:px-6 lg:px-0">
         <h1 className="font-[family-name:var(--font-sora)] text-4xl font-semibold tracking-[-.03em] text-ink-900">
           {docsHome.title}
         </h1>

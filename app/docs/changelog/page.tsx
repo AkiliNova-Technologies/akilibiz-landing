@@ -251,7 +251,7 @@ async function ChangelogContent() {
       </aside>
 
       {/* Center content */}
-      <article>
+      <article className="prose max-w-none px-2 sm:px-4 md:px-6 lg:px-0">
         <nav className="text-sm text-ink-400">Docs / Changelog</nav>
         <h1 className="mt-3 font-[family-name:var(--font-sora)] text-4xl font-semibold tracking-[-.03em] text-ink-900">
           Changelog

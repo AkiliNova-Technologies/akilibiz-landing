@@ -3,7 +3,7 @@
 import * as React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { ChevronDown, ExternalLink, Menu } from "lucide-react";
+import { ChevronDown, Menu } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -200,7 +200,6 @@ export function MarketingNavbar() {
                     rel="noopener noreferrer"
                   >
                     Follow on WhatsApp
-                    <ExternalLink className="h-3.5 w-3.5" aria-hidden="true" />
                   </a>
                 </Button>
               </DialogClose>

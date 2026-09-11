@@ -149,7 +149,7 @@ export default async function DownloadPage() {
             description="Download the desktop application for the daily operations that keep your business moving."
           />
 
-          <div className="mt-10 grid gap-5 lg:grid-cols-[minmax(0,1.5fr)_minmax(360px,0.85fr)]">
+          <div className="mt-10 grid grid-cols-1 gap-5 lg:grid-cols-[minmax(0,1.5fr)_minmax(0,0.85fr)]">
             <article className="rounded-[30px] border border-[#102235]/10 bg-[#102235] p-6 text-white shadow-[0_24px_60px_-36px_rgba(6,19,31,.72)] sm:p-8">
               <div className="flex flex-col gap-8 sm:flex-row sm:items-start sm:justify-between">
                 <div>

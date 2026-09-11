@@ -85,7 +85,7 @@ export default function ProductsPage() {
       {/* Product cards */}
       <section className="px-4 pb-8 sm:px-6 sm:pb-8 lg:px-8">
         <MarketingWideContainer>
-          <div className="grid gap-8 lg:grid-cols-2">
+          <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
             {products.map((product) => {
               const Icon = product.icon;
               return (
@@ -135,7 +135,7 @@ export default function ProductsPage() {
                       {product.shortDescription}
                     </p>
 
-                    <div className="mt-8 grid grid-cols-1 lg: grid-cols-2 gap-2">
+                    <div className="mt-8 grid grid-cols-1 lg:grid-cols-2 gap-2">
                       {product.capabilities.slice(0, 4).map((cap, index) => (
                         <div
                           key={cap}

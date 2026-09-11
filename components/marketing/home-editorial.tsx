@@ -119,7 +119,7 @@ export function HomeEditorial() {
       {/* What AkiliBiz does */}
       <section className="px-4 py-14 sm:px-6 sm:py-20 lg:px-8">
         <div className="mx-auto max-w-[1480px]">
-          <div className="grid gap-8 sm:grid-cols-[1fr_0.6fr] sm:items-end">
+          <div className="grid grid-cols-1 gap-8 sm:grid-cols-[1fr_0.6fr] sm:items-end">
             <div className="space-y-6">
               <h2 className="mt-4 max-w-3xl text-3xl font-semibold leading-[1.05] tracking-[-0.04em] sm:text-4xl lg:text-5xl">
                 Everything Your Business Needs.
@@ -176,7 +176,7 @@ export function HomeEditorial() {
       {/* Products ecosystem */}
       <section className="px-4 pb-14 sm:px-6 sm:pb-20 lg:px-8">
         <div className="mx-auto max-w-[1480px]">
-          <div className="grid gap-8 sm:grid-cols-[1fr_0.6fr] sm:items-end">
+          <div className="grid grid-cols-1 gap-8 sm:grid-cols-[1fr_0.6fr] sm:items-end">
             <div className="space-y-6">
               <h2 className="mt-4 max-w-3xl text-3xl font-semibold leading-[1.05] tracking-[-0.04em] sm:text-4xl lg:text-5xl">
                 Not just software. A connected business platform.
@@ -212,7 +212,7 @@ export function HomeEditorial() {
                   (tag, index) => (
                     <div
                       key={tag}
-                      className="flex items-center gap-3 rounded-full bg-white/[0.04] backdrop-blur-md pl-1.5 pr-4 py-1.5 border border-ink-100">
+                      className="flex w-full items-center gap-3 rounded-full bg-white/[0.04] backdrop-blur-md pl-1.5 pr-4 py-1.5 border border-ink-100">
                       <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-brand-500/15 text-xs font-semibold tabular-nums tracking-[0.08em] text-ink-800 ">
                         {String(index + 1).padStart(2, "0")}
                       </span>
@@ -266,7 +266,7 @@ export function HomeEditorial() {
                   ].map((tag, index) => (
                     <div
                       key={tag}
-                      className="flex items-center gap-3 rounded-full bg-white/[0.04] backdrop-blur-md pl-1.5 pr-4 py-1.5">
+                      className="flex w-full items-center gap-3 rounded-full bg-white/[0.04] backdrop-blur-md pl-1.5 pr-4 py-1.5">
                       <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-brand-500/15 text-xs font-semibold tabular-nums tracking-[0.08em] text-brand-100 ">
                         {String(index + 1).padStart(2, "0")}
                       </span>
@@ -324,7 +324,7 @@ export function HomeEditorial() {
                 </Button>
               </div>
 
-              <div className="grid max-w-xl grid-cols-2 gap-3 pt-10">
+              <div className="grid max-w-xl grid-cols-1 sm:grid-cols-2 gap-3 pt-10">
                 {businessBenefits.map((label, index) => (
                   <div
                     key={label}

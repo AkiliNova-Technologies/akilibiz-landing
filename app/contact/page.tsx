@@ -146,7 +146,7 @@ export default function ContactPage() {
               </div>
             ) : (
               <>
-                <div className="flex items-start gap-4">
+                <div className="flex items-start flex-wrap gap-4">
                   <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-brand-50 text-brand-700">
                     <Mail className="h-5 w-5" aria-hidden="true" />
                   </span>

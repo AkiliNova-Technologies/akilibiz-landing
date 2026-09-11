@@ -106,7 +106,7 @@ export function StoryAndCTA({
     <section className="px-4 pb-14 sm:px-6 sm:pb-20 lg:px-8">
       <div
         className={cn(
-          "mx-auto grid max-w-[1480px] gap-8 lg:grid-cols-[0.62fr_1.38fr]",
+          "mx-auto grid max-w-[1480px] grid-cols-1 gap-8 lg:grid-cols-[0.62fr_1.38fr]",
           layout === "reversed" && "lg:grid-cols-[1.38fr_0.62fr]"
         )}
       >

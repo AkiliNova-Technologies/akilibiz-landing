@@ -30,7 +30,7 @@ export const metadata: Metadata = {
 
   applicationName: "AkiliBiz",
   title: {
-    default: "AkiliBiz — Run your business with clarity",
+    default: "AkiliBiz - Run your business with clarity",
     template: "%s · AkiliBiz",
   },
   description:
@@ -72,7 +72,7 @@ export const metadata: Metadata = {
     locale: "en_UG",
     url: "/",
     siteName: "AkiliBiz",
-    title: "AkiliBiz — Run your business with clarity",
+    title: "AkiliBiz - Run your business with clarity",
     description:
       "Sales, inventory, customers, suppliers, VAT, and reporting in one connected system for growing businesses.",
     images: [
@@ -87,7 +87,7 @@ export const metadata: Metadata = {
 
   twitter: {
     card: "summary_large_image",
-    title: "AkiliBiz — Run your business with clarity",
+    title: "AkiliBiz - Run your business with clarity",
     description:
       "AkiliBiz unifies sales, inventory, customers, suppliers, VAT, and reports so growing African businesses make smarter decisions daily.",
     images: ["/images/seo/akilibiz-og.jpg"],
