@@ -321,7 +321,6 @@ export function buildAkiliBizContactEmail({
                   padding:20px;
                   background:#ffffff;
                   border:1px solid #e4eaf0;
-                  border-left:4px solid #0b67c2;
                   border-radius:10px;
                 "
               >
