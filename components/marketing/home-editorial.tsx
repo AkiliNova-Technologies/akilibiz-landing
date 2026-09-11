@@ -207,7 +207,7 @@ export function HomeEditorial() {
                 built on the same foundation as Desktop.
               </p>
 
-              <div className="mt-5 flex flex-wrap gap-2">
+              <div className="mt-5 grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-3 gap-2">
                 {["Remote access", "Multi-device", "Cloud-connected"].map(
                   (tag, index) => (
                     <div
@@ -258,7 +258,7 @@ export function HomeEditorial() {
                   in sync.
                 </p>
 
-                <div className="mt-5 flex flex-wrap gap-2">
+                <div className="mt-5 grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-3 gap-2">
                   {[
                     "Online ordering",
                     "Product discovery",
