@@ -15,7 +15,7 @@ export type Product = {
   heroHeading: string;
   heroDescription: string;
   introDescription: string;
-  status: "available" | "coming-soon";
+  status: "available" | "beta" | "coming-soon";
   statusLabel: string;
   keyBenefits: {
     title: string;
@@ -44,8 +44,8 @@ export const products: Product[] = [
       "AkiliBiz Business Web brings the same dependable business management you know from the Desktop to a browser, so you can check in on operations, manage your team, and review reports from anywhere with an internet connection.",
     introDescription:
       "AkiliBiz Business Web is the browser-based companion to AkiliBiz Business Desktop. It provides the same connected business platform through a web interface, designed for business owners and managers who need to access their operations remotely, manage multiple locations, or work from devices beyond their primary desktop workstation.",
-    status: "coming-soon",
-    statusLabel: "Coming soon",
+    status: "beta",
+    statusLabel: "Beta",
     keyBenefits: [
       {
         title: "Access from anywhere",
@@ -91,8 +91,8 @@ export const products: Product[] = [
     ],
     relationshipNote:
       "AkiliBiz Business Web is not a separate product from Desktop. It is another interface into the same AkiliBiz Business platform. A sale recorded on Desktop is visible on Web. A product managed on Web is available on Desktop. The platform is designed so that core business operations recording a sale, checking stock, reviewing a report mean the same thing regardless of which client you use.",
-    ctaLabel: "Get notified when available",
-    ctaHref: "/contact",
+    ctaLabel: "Open Business Web Beta",
+    ctaHref: "https://akilibiz-business.vercel.app",
     secondaryCtaLabel: "Download Desktop",
     secondaryCtaHref: "/download",
   },
