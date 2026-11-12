@@ -72,6 +72,9 @@ export default async function ProductDetailPage({
               </ol>
             </nav>
 
+            {product.status === "beta" && (
+              <span className="inline-flex rounded-full border border-brand-300/40 bg-brand-500/20 px-3 py-1 text-xs font-semibold tracking-wide text-brand-100">Beta · Early access</span>
+            )}
             <h1 className="font-[family-name:var(--font-sora)] text-4xl font-semibold leading-[1.01] tracking-[-0.05em] sm:text-5xl lg:text-6xl">
               {product.heroHeading}
             </h1>
@@ -218,7 +221,9 @@ export default async function ProductDetailPage({
         description={
           product.status === "coming-soon"
             ? `${product.name} is currently in development. Reach out to learn more or get notified when it becomes available.`
-            : `Download AkiliBiz Desktop or talk to us about getting set up with ${product.name}.`
+            : product.status === "beta"
+              ? `Try ${product.name} in early access. Some features are still being improved; contact us to share feedback.`
+              : `Download AkiliBiz Desktop or talk to us about getting set up with ${product.name}.`
         }
         primaryLabel={product.ctaLabel}
         primaryHref={product.ctaHref}
