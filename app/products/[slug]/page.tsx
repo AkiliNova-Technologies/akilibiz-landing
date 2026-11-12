@@ -73,7 +73,12 @@ export default async function ProductDetailPage({
             </nav>
 
             {product.status === "beta" && (
-              <span className="inline-flex rounded-full border border-brand-300/40 bg-brand-500/20 px-3 py-1 text-xs font-semibold tracking-wide text-brand-100">Beta · Early access</span>
+              <div className="mb-4 flex flex-wrap items-center gap-2.5">
+                <span className="text-sm font-medium text-white/75">{product.name}</span>
+                <span className="inline-flex items-center rounded-full border border-brand-300/40 bg-brand-500/20 px-2.5 py-0.5 text-[11px] font-semibold leading-5 text-brand-100">
+                  Beta
+                </span>
+              </div>
             )}
             <h1 className="font-[family-name:var(--font-sora)] text-4xl font-semibold leading-[1.01] tracking-[-0.05em] sm:text-5xl lg:text-6xl">
               {product.heroHeading}
