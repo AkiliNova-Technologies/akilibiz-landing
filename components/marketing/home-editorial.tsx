@@ -197,9 +197,10 @@ export function HomeEditorial() {
                 <Laptop className="h-7 w-7" aria-hidden="true" />
               </span>
 
-              <h3 className="mt-8 text-xl font-semibold tracking-tight text-ink-900 sm:text-2xl">
-                AkiliBiz Business Web
-              </h3>
+              <div className="mt-8 flex flex-wrap items-center gap-3">
+                <h3 className="text-xl font-semibold tracking-tight text-ink-900 sm:text-2xl">AkiliBiz Business Web</h3>
+                <span className="rounded-full border border-brand-200 bg-brand-50 px-3 py-1 text-xs font-semibold text-brand-700">Beta</span>
+              </div>
 
               <p className="mt-3 max-w-md text-sm leading-6 text-ink-500">
                 Manage your business from anywhere with a web browser. Remote
